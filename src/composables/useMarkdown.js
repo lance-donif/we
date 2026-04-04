@@ -113,7 +113,9 @@ export function useMarkdown(markdownRef, templateRef) {
             <div class="wx-scheme-label">${inlineFormat(label || '同款方案')}</div>
             <div class="wx-scheme-content">
               <div class="wx-scheme-media">
-                <img class="wx-scheme-image" src="${image}" alt="" />
+                <div class="wx-scheme-image-wrap">
+                  <img class="wx-scheme-image" src="${image}" alt="" />
+                </div>
               </div>
               <div class="wx-scheme-body">
                 <h4 class="wx-scheme-title">${inlineFormat(title)}</h4>

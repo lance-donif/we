@@ -8,7 +8,6 @@
     radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(244, 240, 234, 0.94) 44%, rgba(234, 230, 223, 0.98)),
     repeating-linear-gradient(0deg, rgba(118, 103, 82, 0.028) 0 1px, rgba(255, 255, 255, 0) 1px 4px),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0 2px, rgba(220, 214, 204, 0.08) 2px 5px);
-  transition: background-color 0.4s var(--ease-out);
 }
 
 .wx-post {
@@ -66,7 +65,7 @@
 
 .wx-section {
   position: relative;
-  padding: 8.36px 26.6933px 14.52px;
+  padding: 152px 37px 28px;
   background-image:
     linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08)),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.22) 0 1px, rgba(255, 255, 255, 0) 1px 5px);
@@ -74,27 +73,27 @@
 
 .wx-page {
   display: block;
-  margin-bottom: 55.04px;
+  margin-bottom: 55px;
   text-align: right;
   font-family: var(--font-serif);
-  font-size: 73.3867px;
+  font-size: 73px;
   line-height: 1;
   font-weight: 700;
 }
 
 .wx-h2 {
-  margin: 0 0 9.1733px;
+  margin: 0 0 9px;
   font-family: var(--font-serif);
-  font-size: 41.28px;
+  font-size: 41px;
   line-height: 1.2;
   font-weight: 900;
   color: var(--wx-accent);
 }
 
 .wx-h3 {
-  margin: 0 0 41.28px;
+  margin: 0 0 41px;
   font-family: var(--font-serif);
-  font-size: 27.52px;
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
   color: var(--wx-h3-color);
@@ -108,13 +107,14 @@
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: color-mix(in srgb, var(--wx-accent) 72%, white);
+  opacity: 0.72;
+  color: var(--wx-accent);
 }
 
 .wx-p {
   margin-top: 0;
   font-family: var(--font-serif);
-  font-size: 19.4933px;
+  font-size: 19.5px;
   line-height: 1.8;
   font-weight: 500;
   color: #0f0f0f;
@@ -122,23 +122,28 @@
 }
 
 .wx-p + .wx-p {
-  margin-top: 20.64px;
+  margin-top: 21px;
 }
 
 .wx-strong {
   font-weight: 700;
   color: var(--wx-accent);
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 68%, color-mix(in srgb, var(--wx-accent) 16%, white) 68%, color-mix(in srgb, var(--wx-accent) 16%, white) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 68%, var(--wx-card-bg) 68%, var(--wx-card-bg) 100%);
   padding: 0 2px;
 }
 
 .wx-feature {
-  margin-top: 27.52px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 13.76px;
-  align-items: end;
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.wx-feature-copy {
+  flex: 1;
+  min-width: 0;
 }
 
 .wx-feature-kicker {
@@ -165,16 +170,16 @@
   width: 24px;
   height: 24px;
   border-radius: 7px;
+  flex-shrink: 0;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--wx-accent) 74%, white), color-mix(in srgb, var(--wx-accent) 28%, white));
-  transform: rotate(12deg);
+    linear-gradient(135deg, var(--wx-accent), var(--wx-card-bg));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .wx-callout {
-  margin-top: 27.52px;
-  padding: 13.76px;
-  border-radius: 18.3467px;
+  margin-top: 28px;
+  padding: 14px;
+  border-radius: 18px;
   background: var(--wx-card-bg);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
@@ -201,9 +206,9 @@
 }
 
 .wx-note {
-  margin-top: 27.52px;
-  padding: 13.76px;
-  border-radius: 18.3467px;
+  margin-top: 28px;
+  padding: 14px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.74);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
@@ -221,14 +226,13 @@
 }
 
 .wx-highlight {
-  margin-top: 27.52px;
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 13.76px;
-  align-items: start;
-  padding: 13.76px;
-  border-radius: 18.3467px;
-  background: color-mix(in srgb, var(--wx-card-bg) 72%, white);
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--wx-card-bg);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
@@ -237,9 +241,9 @@
   height: 18px;
   margin-top: 2px;
   border-radius: 6px;
+  flex-shrink: 0;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--wx-accent) 82%, white), color-mix(in srgb, var(--wx-accent) 28%, white));
-  transform: rotate(12deg);
+    linear-gradient(135deg, var(--wx-accent), var(--wx-card-bg));
 }
 
 .wx-highlight-text {
@@ -251,10 +255,10 @@
 }
 
 .wx-scheme-card {
-  margin-top: 22px;
-  padding: 12px;
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--wx-card-bg) 68%, white);
+  margin-top: 28px;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--wx-card-bg);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.46),
     0 10px 22px rgba(34, 28, 21, 0.06);
@@ -277,7 +281,8 @@
 
 .wx-scheme-content {
   margin-top: 10px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -287,9 +292,18 @@
   background: rgba(255, 255, 255, 0.76);
 }
 
-.wx-scheme-image {
+.wx-scheme-image-wrap {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1.52;
+  padding-bottom: 65.79%;
+}
+
+.wx-scheme-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -321,17 +335,25 @@
 }
 
 .wx-media-grid {
-  margin-top: 22px;
-  display: grid;
-  gap: 10px;
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
-.wx-media-grid.columns-2 {
-  grid-template-columns: 1.15fr 0.85fr;
+.wx-media-grid.columns-2 .wx-media-card:first-child {
+  flex: 1.15 1 0;
+  min-width: 0;
 }
 
-.wx-media-grid.columns-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.wx-media-grid.columns-2 .wx-media-card:last-child {
+  flex: 0.85 1 0;
+  min-width: 0;
+}
+
+.wx-media-grid.columns-3 .wx-media-card {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .wx-media-card {
@@ -344,7 +366,7 @@
   position: relative;
   overflow: hidden;
   min-height: 186px;
-  border-radius: 16px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.76);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 }

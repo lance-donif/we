@@ -1,8 +1,8 @@
 <template>
   <div class="wx-compiled-content" :class="templateClass">
-    <article ref="wxPostRef" class="wx-post">
+    <section ref="wxPostRef" class="wx-post">
       <div class="wx-content" v-html="renderedHtml"></div>
-    </article>
+    </section>
   </div>
 </template>
 

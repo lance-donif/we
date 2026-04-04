@@ -22,7 +22,99 @@ export function useClipboard() {
     }
 
     const styledClone = template.copyRichText(sourceEl.cloneNode(true))
-    const images = Array.from(styledClone.querySelectorAll('img'))
+    const exportRoot = document.createElement('section')
+    exportRoot.className = styledClone.className || 'wx-post'
+    exportRoot.setAttribute('style', styledClone.getAttribute('style') || '')
+
+    Array.from(styledClone.childNodes).forEach((child) => {
+      if (child.nodeType === Node.ELEMENT_NODE && child.classList.contains('wx-content')) {
+        while (child.firstChild) {
+          exportRoot.appendChild(child.firstChild)
+        }
+        return
+      }
+
+      exportRoot.appendChild(child)
+    })
+
+    const leadParagraph = document.createElement('p')
+    leadParagraph.innerHTML = '&nbsp;'
+    leadParagraph.setAttribute('style', 'margin:0; padding:0; font-size:0; line-height:0; height:0; overflow:hidden; color:transparent;')
+    exportRoot.insertBefore(leadParagraph, exportRoot.firstChild)
+
+    const nodesToRemove = []
+    const exportElements = [exportRoot]
+    const walker = document.createTreeWalker(exportRoot, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT)
+
+    while (walker.nextNode()) {
+      const current = walker.currentNode
+
+      if (current.nodeType === Node.COMMENT_NODE) {
+        nodesToRemove.push(current)
+        continue
+      }
+
+      if (current.nodeType === Node.TEXT_NODE) {
+        if (!/\S/.test(current.textContent || '')) {
+          nodesToRemove.push(current)
+        }
+        continue
+      }
+
+      exportElements.push(current)
+    }
+
+    nodesToRemove.forEach((node) => {
+      node.parentNode?.removeChild(node)
+    })
+
+    exportElements.forEach((element) => {
+      const tagName = element.tagName.toLowerCase()
+      let style = element.getAttribute('style') || ''
+
+      if (/color\s*:\s*inherit/i.test(style) || (tagName === 'a' && !/color\s*:/i.test(style))) {
+        let inheritedColor = ''
+        let parent = element.parentElement
+
+        while (parent && !inheritedColor) {
+          const parentStyle = parent.getAttribute('style') || ''
+          const colorMatch = parentStyle.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i)
+          if (colorMatch?.[1]) {
+            inheritedColor = colorMatch[1].trim()
+          }
+          parent = parent.parentElement
+        }
+
+        if (/color\s*:\s*inherit/i.test(style)) {
+          style = style.replace(/color\s*:\s*inherit/gi, `color:${inheritedColor || '#0f0f0f'}`)
+        } else if (tagName === 'a') {
+          style = `${style}${style && !style.trim().endsWith(';') ? ';' : ''} color:${inheritedColor || '#0f0f0f'};`
+        }
+      }
+
+      if (tagName === 'svg') {
+        style = `${style}${style && !style.trim().endsWith(';') ? ';' : ''} max-width:100%; color:#333333; fill:#333333;`
+      }
+
+      if (tagName === 'text' || tagName === 'tspan') {
+        style = `${style}${style && !style.trim().endsWith(';') ? ';' : ''} fill:#333333; color:#333333; stroke:none;`
+      }
+
+      style = style
+        .replace(/--[\w-]+\s*:\s*[^;]+;?/g, '')
+        .replace(/var\(--[\w-]+,\s*([^)]+)\)/g, '$1')
+        .replace(/var\(--[\w-]+\)/g, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim()
+
+      if (style) {
+        element.setAttribute('style', style)
+      } else {
+        element.removeAttribute('style')
+      }
+    })
+
+    const images = Array.from(exportRoot.querySelectorAll('img'))
     let failedImageCount = 0
 
     if (images.length) {
@@ -50,13 +142,26 @@ export function useClipboard() {
       }))
     }
 
-    const finalHTML = styledClone.outerHTML
+    let finalHTML = exportRoot.outerHTML
+      .replace(/<foreignObject([^>]*)>/gi, '<section$1>')
+      .replace(/<\/foreignObject>/gi, '</section>')
+      .replace(/--[\w-]+\s*:\s*[^;]+;?/g, '')
+      .replace(/var\(--[\w-]+,\s*([^)]+)\)/g, '$1')
+      .replace(/var\(--[\w-]+\)/g, '')
+      .replace(/color\s*:\s*inherit/gi, 'color:#0f0f0f')
+      .trim()
+
+    if (!/^<section\b/i.test(finalHTML)) {
+      finalHTML = `<section style="${exportRoot.getAttribute('style') || ''}">${finalHTML}</section>`
+    }
+
+    const plainText = exportRoot.innerText.replace(/^\s+/, '')
 
     // 方案A: Clipboard API
     if (navigator.clipboard && navigator.clipboard.write) {
       try {
         const htmlBlob = new Blob([finalHTML], { type: 'text/html' })
-        const textBlob = new Blob([styledClone.innerText], { type: 'text/plain' })
+        const textBlob = new Blob([plainText], { type: 'text/plain' })
         await navigator.clipboard.write([
           new ClipboardItem({
             'text/html': htmlBlob,
