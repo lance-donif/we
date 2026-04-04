@@ -1,4 +1,6 @@
 .wx-compiled-content {
+  --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  --font-serif: 'Songti SC', 'STSong', 'SimSun', 'Times New Roman', serif;
   min-height: 100%;
   padding: 32px 24px 48px;
   display: flex;
@@ -21,31 +23,31 @@
 }
 
 .wx-title-block {
-  padding: 20px 16px 14px;
+  padding: 16px 16px 12px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(251, 250, 248, 0.88));
 }
 
 .wx-title {
   font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.5;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #7f7a72;
 }
 
 .wx-meta {
-  margin-top: 6px;
+  margin-top: 4px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-sans);
-  font-size: 11px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.55;
   color: #aaa39a;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -65,7 +67,7 @@
 
 .wx-section {
   position: relative;
-  padding: 152px 37px 28px;
+  padding: 40px 24px 24px;
   background-image:
     linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08)),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.22) 0 1px, rgba(255, 255, 255, 0) 1px 5px);
@@ -73,40 +75,40 @@
 
 .wx-page {
   display: block;
-  margin-bottom: 55px;
+  margin-bottom: 20px;
   text-align: right;
   font-family: var(--font-serif);
-  font-size: 73px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 700;
 }
 
 .wx-h2 {
-  margin: 0 0 9px;
+  margin: 0 0 10px;
   font-family: var(--font-serif);
-  font-size: 41px;
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
   color: var(--wx-accent);
 }
 
 .wx-h3 {
-  margin: 0 0 41px;
+  margin: 0 0 16px;
   font-family: var(--font-serif);
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 18px;
+  line-height: 1.45;
   font-weight: 700;
   color: var(--wx-h3-color);
 }
 
 .wx-h3-mood {
   margin-top: 0;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.2;
+  font-size: 12px;
+  line-height: 1.5;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   opacity: 0.72;
   color: var(--wx-accent);
 }
@@ -114,15 +116,16 @@
 .wx-p {
   margin-top: 0;
   font-family: var(--font-serif);
-  font-size: 19.5px;
-  line-height: 1.8;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   color: #0f0f0f;
   text-align: left;
 }
 
 .wx-p + .wx-p {
-  margin-top: 21px;
+  margin-top: 12px;
 }
 
 .wx-strong {
@@ -134,11 +137,11 @@
 }
 
 .wx-feature {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 14px;
+  gap: 12px;
 }
 
 .wx-feature-copy {
@@ -149,20 +152,20 @@
 .wx-feature-kicker {
   display: block;
   font-family: var(--font-serif);
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.5;
   font-weight: 700;
   color: var(--wx-h3-color);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
 }
 
 .wx-feature-title {
   display: block;
   margin-top: 3px;
   font-family: var(--font-serif);
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 700;
   color: var(--wx-accent);
 }
 
@@ -177,7 +180,7 @@
 }
 
 .wx-callout {
-  margin-top: 28px;
+  margin-top: 24px;
   padding: 14px;
   border-radius: 18px;
   background: var(--wx-card-bg);
@@ -190,23 +193,23 @@
 }
 
 .wx-callout-item + .wx-callout-item {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .wx-callout-item.lead {
-  font-size: 16px;
-  line-height: 1.42;
-  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 700;
 }
 
 .wx-callout-item:not(.lead) {
-  font-size: 13px;
-  line-height: 1.74;
-  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 .wx-note {
-  margin-top: 28px;
+  margin-top: 24px;
   padding: 14px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.72);
@@ -216,19 +219,19 @@
 
 .wx-note-line {
   font-family: var(--font-serif);
-  font-size: 13px;
-  line-height: 1.74;
+  font-size: 12px;
+  line-height: 1.55;
   color: #58524a;
 }
 
 .wx-note-line + .wx-note-line {
-  margin-top: 7px;
+  margin-top: 6px;
 }
 
 .wx-highlight {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: flex-start;
   padding: 14px;
   border-radius: 18px;
@@ -250,12 +253,12 @@
   font-family: var(--font-serif);
   font-size: 14px;
   line-height: 1.7;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--wx-h3-color);
 }
 
 .wx-scheme-card {
-  margin-top: 28px;
+  margin-top: 24px;
   padding: 14px;
   border-radius: 18px;
   background: var(--wx-card-bg);
@@ -270,9 +273,9 @@
   padding: 4px 10px;
   border-radius: 999px;
   font-family: var(--font-sans);
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--wx-accent);
@@ -283,7 +286,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .wx-scheme-media {
@@ -311,16 +314,16 @@
 .wx-scheme-title {
   font-family: var(--font-serif);
   font-size: 18px;
-  line-height: 1.25;
-  font-weight: 800;
+  line-height: 1.45;
+  font-weight: 700;
   color: var(--wx-accent);
 }
 
 .wx-scheme-meta {
   margin-top: 4px;
   font-family: var(--font-sans);
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.55;
   font-weight: 700;
   color: var(--wx-h3-color);
   letter-spacing: 0.04em;
@@ -329,16 +332,16 @@
 .wx-scheme-desc {
   margin-top: 8px;
   font-family: var(--font-serif);
-  font-size: 13px;
-  line-height: 1.68;
+  font-size: 14px;
+  line-height: 1.7;
   color: #4d473f;
 }
 
 .wx-media-grid {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 
 .wx-media-grid.columns-2 .wx-media-card:first-child {
@@ -359,7 +362,7 @@
 .wx-media-card {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .wx-media-frame {
@@ -384,8 +387,8 @@
 
 .wx-media-caption {
   font-family: var(--font-sans);
-  font-size: 10px;
-  line-height: 1.35;
+  font-size: 12px;
+  line-height: 1.55;
   font-weight: 700;
   color: var(--wx-accent);
   text-align: center;

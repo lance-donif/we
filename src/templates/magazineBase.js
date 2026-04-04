@@ -51,14 +51,14 @@ export function createMagazineTemplate(template) {
         const bottomRadius = index === sections.length - 1 ? 'border-bottom-left-radius:32px; border-bottom-right-radius:32px;' : ''
         section.setAttribute(
           'style',
-          `background-color:${palette.bg}; padding:12px 12px 12px; position:relative; ${topRadius} ${bottomRadius}`
+          `background-color:${palette.bg}; padding:40px 24px 24px; position:relative; ${topRadius} ${bottomRadius}`
         )
 
         const page = section.querySelector('.wx-page')
         if (page) {
           page.setAttribute(
             'style',
-            `display:block; margin-bottom:55px; text-align:right; font-family:${serifStack}; font-size:73px; line-height:1; font-weight:700; color:${palette.number};`
+            `display:block; margin-bottom:20px; text-align:right; font-family:${serifStack}; font-size:28px; line-height:1; font-weight:700; color:${palette.number};`
           )
         }
 
@@ -66,7 +66,7 @@ export function createMagazineTemplate(template) {
         if (h2) {
           h2.setAttribute(
             'style',
-            `font-family:${serifStack}; font-size:41px; line-height:1.2; font-weight:900; color:${palette.accent}; margin:0 0 9px;`
+            `font-family:${serifStack}; font-size:22px; line-height:1.4; font-weight:700; color:${palette.accent}; margin:0 0 10px;`
           )
         }
 
@@ -75,15 +75,15 @@ export function createMagazineTemplate(template) {
           h3.setAttribute(
             'style',
             h3.classList.contains('wx-h3-mood')
-              ? `margin-top:0; margin-bottom:6px; font-family:${sansStack}; font-size:14px; line-height:1.2; font-weight:700; letter-spacing:0.16em; opacity:0.72; color:${palette.accent};`
-              : `margin:0 0 41px; font-family:${serifStack}; font-size:28px; line-height:1.2; font-weight:700; color:${palette.h3};`
+              ? `margin-top:0; margin-bottom:4px; font-family:${sansStack}; font-size:12px; line-height:1.5; font-weight:700; letter-spacing:0.08em; opacity:0.72; color:${palette.accent};`
+              : `margin:0 0 16px; font-family:${serifStack}; font-size:18px; line-height:1.45; font-weight:700; color:${palette.h3};`
           )
         }
 
         section.querySelectorAll('.wx-p').forEach((paragraph, paragraphIndex) => {
           paragraph.setAttribute(
             'style',
-            `margin-top:${paragraphIndex === 0 ? 0 : 21}px; font-family:${serifStack}; font-size:19.5px; line-height:1.8; font-weight:500; color:#0f0f0f; text-align:left;`
+            `margin-top:${paragraphIndex === 0 ? 0 : 12}px; font-family:${serifStack}; font-size:16px; line-height:1.75; font-weight:400; letter-spacing:0.01em; color:#0f0f0f; text-align:left;`
           )
         })
 
@@ -95,7 +95,7 @@ export function createMagazineTemplate(template) {
         })
 
         section.querySelectorAll('.wx-feature').forEach((feature) => {
-          feature.setAttribute('style', 'margin-top:28px; display:flex; justify-content:space-between; align-items:flex-end; gap:14px;')
+          feature.setAttribute('style', 'margin-top:24px; display:flex; justify-content:space-between; align-items:flex-end; gap:12px;')
           const featureCopy = feature.querySelector('.wx-feature-copy')
           if (featureCopy) {
             featureCopy.setAttribute('style', 'flex:1; min-width:0;')
@@ -104,14 +104,14 @@ export function createMagazineTemplate(template) {
           if (kicker) {
             kicker.setAttribute(
               'style',
-              `display:block; font-family:${serifStack}; font-size:11px; line-height:1.4; font-weight:700; color:${palette.h3}; letter-spacing:0.04em;`
+              `display:block; font-family:${serifStack}; font-size:12px; line-height:1.5; font-weight:700; color:${palette.h3}; letter-spacing:0.08em;`
             )
           }
           const featureTitle = feature.querySelector('.wx-feature-title')
           if (featureTitle) {
             featureTitle.setAttribute(
               'style',
-              `display:block; margin-top:3px; font-family:${serifStack}; font-size:20px; line-height:1.2; font-weight:800; color:${palette.accent};`
+              `display:block; margin-top:3px; font-family:${serifStack}; font-size:18px; line-height:1.45; font-weight:700; color:${palette.accent};`
             )
           }
           const mark = feature.querySelector('.wx-feature-mark')
@@ -127,15 +127,15 @@ export function createMagazineTemplate(template) {
           card.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
-              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              ? `margin-top:24px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:24px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           card.querySelectorAll('.wx-callout-item').forEach((item, itemIndex) => {
             item.setAttribute(
               'style',
               itemIndex === 0
-                ? `margin-top:${itemIndex === 0 ? 0 : 8}px; font-family:${serifStack}; font-size:16px; line-height:1.42; font-weight:800; color:${palette.h3};`
-                : `margin-top:8px; font-family:${serifStack}; font-size:13px; line-height:1.74; font-weight:600; color:${palette.h3};`
+                ? `margin-top:${itemIndex === 0 ? 0 : 6}px; font-family:${serifStack}; font-size:14px; line-height:1.7; font-weight:700; color:${palette.h3};`
+                : `margin-top:6px; font-family:${serifStack}; font-size:14px; line-height:1.7; font-weight:500; color:${palette.h3};`
             )
           })
         })
@@ -144,13 +144,13 @@ export function createMagazineTemplate(template) {
           note.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
-              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
+              ? `margin-top:24px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
+              : `margin-top:24px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
           )
           note.querySelectorAll('.wx-note-line').forEach((line, lineIndex) => {
             line.setAttribute(
               'style',
-              `margin-top:${lineIndex === 0 ? 0 : 7}px; font-family:${serifStack}; font-size:13px; line-height:1.74; color:#58524a;`
+              `margin-top:${lineIndex === 0 ? 0 : 6}px; font-family:${serifStack}; font-size:12px; line-height:1.55; color:#58524a;`
             )
           })
         })
@@ -159,8 +159,8 @@ export function createMagazineTemplate(template) {
           highlight.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
-              : `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              ? `margin-top:24px; display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:24px; display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           const icon = highlight.querySelector('.wx-highlight-icon')
           if (icon) {
@@ -173,7 +173,7 @@ export function createMagazineTemplate(template) {
           if (text) {
             text.setAttribute(
               'style',
-              `font-family:${serifStack}; font-size:14px; line-height:1.7; font-weight:700; color:${palette.h3};`
+              `font-family:${serifStack}; font-size:14px; line-height:1.7; font-weight:500; color:${palette.h3};`
             )
           }
         })
@@ -182,19 +182,19 @@ export function createMagazineTemplate(template) {
           card.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
-              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              ? `margin-top:24px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:24px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           const label = card.querySelector('.wx-scheme-label')
           if (label) {
             label.setAttribute(
               'style',
-              `display:inline-flex; align-items:center; padding:4px 10px; border-radius:999px; font-family:${sansStack}; font-size:10px; line-height:1; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:${palette.accent}; background:${labelSurface};`
+              `display:inline-flex; align-items:center; padding:4px 10px; border-radius:999px; font-family:${sansStack}; font-size:12px; line-height:1.5; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:${palette.accent}; background:${labelSurface};`
             )
           }
           const content = card.querySelector('.wx-scheme-content')
           if (content) {
-            content.setAttribute('style', 'margin-top:10px; display:flex; flex-direction:column; gap:12px;')
+            content.setAttribute('style', 'margin-top:10px; display:flex; flex-direction:column; gap:10px;')
           }
           const media = card.querySelector('.wx-scheme-media')
           if (media) {
@@ -217,21 +217,21 @@ export function createMagazineTemplate(template) {
           if (title) {
             title.setAttribute(
               'style',
-              `font-family:${serifStack}; font-size:18px; line-height:1.25; font-weight:800; color:${palette.accent}; margin:0;`
+              `font-family:${serifStack}; font-size:18px; line-height:1.45; font-weight:700; color:${palette.accent}; margin:0;`
             )
           }
           const meta = card.querySelector('.wx-scheme-meta')
           if (meta) {
             meta.setAttribute(
               'style',
-              `margin-top:4px; font-family:${sansStack}; font-size:11px; line-height:1.4; font-weight:700; color:${palette.h3}; letter-spacing:0.04em;`
+              `margin-top:4px; font-family:${sansStack}; font-size:12px; line-height:1.55; font-weight:700; color:${palette.h3}; letter-spacing:0.04em;`
             )
           }
           const desc = card.querySelector('.wx-scheme-desc')
           if (desc) {
             desc.setAttribute(
               'style',
-              `margin-top:8px; font-family:${serifStack}; font-size:13px; line-height:1.68; color:#4d473f;`
+              `margin-top:8px; font-family:${serifStack}; font-size:14px; line-height:1.7; color:#4d473f;`
             )
           }
         })
@@ -240,15 +240,15 @@ export function createMagazineTemplate(template) {
           const count = grid.querySelectorAll('.wx-media-card').length
           grid.setAttribute(
             'style',
-            `margin-top:28px; display:flex; flex-wrap:wrap; gap:14px;`
+            `margin-top:24px; display:flex; flex-wrap:wrap; gap:12px;`
           )
           grid.querySelectorAll('.wx-media-card').forEach((card, ci) => {
             if (count === 2) {
               card.setAttribute('style', ci === 0
-                ? 'display:flex; flex-direction:column; gap:6px; flex:1.15 1 0; min-width:0;'
-                : 'display:flex; flex-direction:column; gap:6px; flex:0.85 1 0; min-width:0;')
+                ? 'display:flex; flex-direction:column; gap:8px; flex:1.15 1 0; min-width:0;'
+                : 'display:flex; flex-direction:column; gap:8px; flex:0.85 1 0; min-width:0;')
             } else {
-              card.setAttribute('style', 'display:flex; flex-direction:column; gap:6px; flex:1 1 0; min-width:0;')
+              card.setAttribute('style', 'display:flex; flex-direction:column; gap:8px; flex:1 1 0; min-width:0;')
             }
           })
           grid.querySelectorAll('.wx-media-frame').forEach((frame) => {
@@ -265,7 +265,7 @@ export function createMagazineTemplate(template) {
           grid.querySelectorAll('.wx-media-caption').forEach((caption) => {
             caption.setAttribute(
               'style',
-              `font-family:${sansStack}; font-size:10px; line-height:1.35; font-weight:700; color:${palette.accent}; text-align:center; letter-spacing:0.04em;`
+              `font-family:${sansStack}; font-size:12px; line-height:1.55; font-weight:700; color:${palette.accent}; text-align:center; letter-spacing:0.04em;`
             )
           })
         })
