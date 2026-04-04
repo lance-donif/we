@@ -30,10 +30,10 @@ import ToastMessage from './components/ToastMessage.vue'
 import { useTemplates } from './composables/useTemplates.js'
 import { useMarkdown } from './composables/useMarkdown.js'
 import { useClipboard } from './composables/useClipboard.js'
-import sampleArticle from '../articles/2026-04-02-喝水护肤.md?raw'
 
 import './assets/styles/editor.css'
 
+const sampleArticle = await fetch('/2026-04-02-喝水护肤.md').then((response) => response.text())
 const sampleLines = sampleArticle.trim().split('\n')
 const title = ref(sampleLines[0].replace(/^#\s+/, ''))
 const content = ref(sampleLines.slice(2).join('\n'))
