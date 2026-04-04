@@ -72,6 +72,14 @@ export function useClipboard() {
       const tagName = element.tagName.toLowerCase()
       let style = element.getAttribute('style') || ''
 
+      if (/font-family\s*:\s*[^;]*(DM Sans|Caveat)/i.test(style)) {
+        style = style.replace(/font-family\s*:\s*[^;]+/i, "font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif")
+      }
+
+      if (/font-family\s*:\s*[^;]*Noto Serif SC/i.test(style)) {
+        style = style.replace(/font-family\s*:\s*[^;]+/i, "font-family:'Songti SC','STSong','SimSun','Times New Roman',serif")
+      }
+
       if (/color\s*:\s*inherit/i.test(style) || (tagName === 'a' && !/color\s*:/i.test(style))) {
         let inheritedColor = ''
         let parent = element.parentElement
@@ -101,6 +109,8 @@ export function useClipboard() {
       }
 
       style = style
+        .replace(/(?:^|;)\s*background-image\s*:[^;]+;?/gi, ';')
+        .replace(/(?:^|;)\s*box-shadow\s*:[^;]+;?/gi, ';')
         .replace(/--[\w-]+\s*:\s*[^;]+;?/g, '')
         .replace(/var\(--[\w-]+,\s*([^)]+)\)/g, '$1')
         .replace(/var\(--[\w-]+\)/g, '')
@@ -145,6 +155,8 @@ export function useClipboard() {
     let finalHTML = exportRoot.outerHTML
       .replace(/<foreignObject([^>]*)>/gi, '<section$1>')
       .replace(/<\/foreignObject>/gi, '</section>')
+      .replace(/background-image\s*:[^;"]+;?/gi, '')
+      .replace(/box-shadow\s*:[^;"]+;?/gi, '')
       .replace(/--[\w-]+\s*:\s*[^;]+;?/g, '')
       .replace(/var\(--[\w-]+,\s*([^)]+)\)/g, '$1')
       .replace(/var\(--[\w-]+\)/g, '')

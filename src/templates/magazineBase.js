@@ -17,15 +17,9 @@ export function createMagazineTemplate(template) {
     cssText: `${sharedCssText}\n${template.cssText}`,
     copyRichText(clone) {
       const isBalkan = template.id === 'tpl-magazine-balkan'
-      const balkanNoise =
-        'background-image:url(https://fe-static.xhscdn.com/formula-static/slytherinh5/public/img/noise.1ab1741.svg); background-repeat:repeat;'
-      const serifStack = "'Noto Serif SC','Songti SC','STSong',Georgia,'Times New Roman',serif"
-      const sansStack = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif"
+      const serifStack = "'Songti SC','STSong','SimSun','Times New Roman',serif"
+      const sansStack = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif"
       const rootBg = template.sectionPalette[0]?.bg || '#f5f5f5'
-      const sectionPaper =
-        isBalkan
-          ? balkanNoise
-          : 'background-image:linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.08)), repeating-linear-gradient(0deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 5px);'
 
       clone.setAttribute(
         'style',
@@ -46,16 +40,18 @@ export function createMagazineTemplate(template) {
 
       sections.forEach((section, index) => {
         const palette = template.sectionPalette[index % template.sectionPalette.length]
-        const mutedSurface = blendColor(palette.bg, 0.72)
-        const mutedBorder = blendColor(palette.bg, 0.74)
-        const elevatedSurface = blendColor(palette.bg, 0.78)
-        const elevatedBorder = blendColor(palette.bg, 0.54)
-        const labelSurface = blendColor(palette.bg, 0.72)
+        const cardSurface = blendColor(palette.cardBg, 0.18)
+        const noteSurface = blendColor(palette.bg, 0.72)
+        const frameSurface = blendColor(palette.bg, 0.6)
+        const subtleBorder = blendColor(palette.accent, 0.8)
+        const frameBorder = blendColor(palette.accent, 0.84)
+        const labelSurface = blendColor(palette.bg, 0.66)
+        const iconSurface = blendColor(palette.accent, 0.18)
         const topRadius = index === 0 ? 'border-top-left-radius:32px; border-top-right-radius:32px;' : ''
         const bottomRadius = index === sections.length - 1 ? 'border-bottom-left-radius:32px; border-bottom-right-radius:32px;' : ''
         section.setAttribute(
           'style',
-          `background-color:${palette.bg}; ${sectionPaper} padding:12px 12px 12px; position:relative; ${topRadius} ${bottomRadius}`
+          `background-color:${palette.bg}; padding:12px 12px 12px; position:relative; ${topRadius} ${bottomRadius}`
         )
 
         const page = section.querySelector('.wx-page')
@@ -94,7 +90,7 @@ export function createMagazineTemplate(template) {
         section.querySelectorAll('.wx-strong').forEach((strong) => {
           strong.setAttribute(
             'style',
-            `font-weight:700; color:${palette.accent}; background:linear-gradient(180deg, rgba(0,0,0,0) 0, rgba(0,0,0,0) 68%, ${palette.cardBg} 68%, ${palette.cardBg} 100%); padding:0 2px;`
+            `font-weight:700; color:${palette.accent}; background-color:${cardSurface}; border-bottom:2px solid ${palette.accent}; padding:0 2px;`
           )
         })
 
@@ -122,7 +118,7 @@ export function createMagazineTemplate(template) {
           if (mark) {
             mark.setAttribute(
               'style',
-              `width:24px; height:24px; border-radius:7px; flex-shrink:0; background:linear-gradient(135deg, ${palette.accent}, ${palette.cardBg}); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.5);`
+              `width:24px; height:24px; border-radius:7px; flex-shrink:0; background-color:${iconSurface}; border:1px solid ${subtleBorder};`
             )
           }
         })
@@ -131,8 +127,8 @@ export function createMagazineTemplate(template) {
           card.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);`
-              : `margin-top:28px; padding:14px; border-radius:18px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);`
+              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           card.querySelectorAll('.wx-callout-item').forEach((item, itemIndex) => {
             item.setAttribute(
@@ -148,8 +144,8 @@ export function createMagazineTemplate(template) {
           note.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${elevatedSurface}; border:1px solid ${elevatedBorder}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);`
-              : `margin-top:28px; padding:14px; border-radius:18px; background:${mutedSurface}; border:1px solid ${mutedBorder}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);`
+              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
+              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${noteSurface}; border:1px solid ${frameBorder};`
           )
           note.querySelectorAll('.wx-note-line').forEach((line, lineIndex) => {
             line.setAttribute(
@@ -163,14 +159,14 @@ export function createMagazineTemplate(template) {
           highlight.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.45);`
-              : `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.45);`
+              ? `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:28px; display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           const icon = highlight.querySelector('.wx-highlight-icon')
           if (icon) {
             icon.setAttribute(
               'style',
-              `width:18px; height:18px; margin-top:2px; border-radius:6px; flex-shrink:0; background:linear-gradient(135deg, ${palette.accent}, ${palette.cardBg});`
+              `width:18px; height:18px; margin-top:2px; border-radius:6px; flex-shrink:0; background-color:${iconSurface}; border:1px solid ${subtleBorder};`
             )
           }
           const text = highlight.querySelector('.wx-highlight-text')
@@ -186,8 +182,8 @@ export function createMagazineTemplate(template) {
           card.setAttribute(
             'style',
             isBalkan
-              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.46), 0 10px 22px rgba(34,28,21,0.06);`
-              : `margin-top:28px; padding:14px; border-radius:18px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.46), 0 10px 22px rgba(34,28,21,0.06);`
+              ? `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
+              : `margin-top:28px; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder};`
           )
           const label = card.querySelector('.wx-scheme-label')
           if (label) {
@@ -205,8 +201,8 @@ export function createMagazineTemplate(template) {
             media.setAttribute(
               'style',
               isBalkan
-                ? `overflow:hidden; border-radius:16px; background-color:${elevatedSurface}; border:1px solid ${elevatedBorder};`
-                : `overflow:hidden; border-radius:16px; background:${elevatedSurface};`
+                ? `overflow:hidden; border-radius:16px; background-color:${frameSurface}; border:1px solid ${frameBorder};`
+                : `overflow:hidden; border-radius:16px; background-color:${frameSurface}; border:1px solid ${frameBorder};`
             )
           }
           const imageWrap = card.querySelector('.wx-scheme-image-wrap')
@@ -259,8 +255,8 @@ export function createMagazineTemplate(template) {
             frame.setAttribute(
               'style',
               isBalkan
-                ? `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:18px; background-color:${elevatedSurface}; border:1px solid ${elevatedBorder}; box-shadow:0 10px 22px rgba(34,28,21,0.05), inset 0 0 0 1px rgba(255,255,255,0.2);`
-                : `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:18px; background:${elevatedSurface}; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.55);`
+                ? `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:18px; background-color:${frameSurface}; border:1px solid ${frameBorder};`
+                : `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:18px; background-color:${frameSurface}; border:1px solid ${frameBorder};`
             )
           })
           grid.querySelectorAll('.wx-img').forEach((image) => {
