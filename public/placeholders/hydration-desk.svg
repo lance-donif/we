@@ -1,0 +1,15 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#F8F5E8"/>
+  <rect x="48" y="48" width="624" height="804" rx="34" fill="#FFFDF5"/>
+  <rect x="112" y="570" width="496" height="56" rx="18" fill="#D8C48A"/>
+  <rect x="180" y="246" width="360" height="248" rx="26" fill="#F8F0C9"/>
+  <rect x="214" y="280" width="292" height="38" rx="12" fill="#FFFFFF"/>
+  <rect x="214" y="340" width="250" height="22" rx="11" fill="#FFFFFF"/>
+  <rect x="214" y="384" width="198" height="22" rx="11" fill="#FFFFFF"/>
+  <rect x="484" y="648" width="66" height="118" rx="22" fill="#F4FFF7"/>
+  <rect x="496" y="622" width="42" height="52" rx="20" fill="#F4FFF7"/>
+  <rect x="502" y="684" width="30" height="62" rx="10" fill="#97E0A8"/>
+  <circle cx="186" cy="200" r="58" fill="#FFF2BE"/>
+  <text x="84" y="128" fill="#8C7321" font-size="34" font-family="Arial, sans-serif" font-weight="700">desktop reminder</text>
+  <text x="84" y="172" fill="#B0A273" font-size="22" font-family="Arial, sans-serif">habit placeholder</text>
+</svg>

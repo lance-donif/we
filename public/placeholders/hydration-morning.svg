@@ -1,0 +1,11 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#FFF4E9"/>
+  <rect x="50" y="50" width="620" height="800" rx="34" fill="#FFFDFC"/>
+  <circle cx="548" cy="196" r="104" fill="#FFE1A8"/>
+  <path d="M114 676C188 584 268 538 354 538C440 538 526 584 612 676V812H114V676Z" fill="#EBC59C"/>
+  <rect x="272" y="274" width="146" height="258" rx="44" fill="#FFF8F0"/>
+  <rect x="286" y="244" width="118" height="80" rx="38" fill="#FFF8F0"/>
+  <rect x="300" y="338" width="90" height="160" rx="24" fill="#FFD58F"/>
+  <text x="84" y="126" fill="#B8761D" font-size="34" font-family="Arial, sans-serif" font-weight="700">morning glass</text>
+  <text x="84" y="170" fill="#C9A36D" font-size="22" font-family="Arial, sans-serif">early sip placeholder</text>
+</svg>

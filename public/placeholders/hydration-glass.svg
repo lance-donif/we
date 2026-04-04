@@ -1,0 +1,11 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#F0FAF8"/>
+  <rect x="44" y="44" width="632" height="812" rx="32" fill="#FCFFFE"/>
+  <rect x="236" y="152" width="248" height="470" rx="52" fill="#F6FCFD" stroke="#BEEBE4" stroke-width="18"/>
+  <path d="M258 334C258 280.98 300.98 238 354 238H366C419.02 238 462 280.98 462 334V568C462 601.137 435.137 628 402 628H318C284.863 628 258 601.137 258 568V334Z" fill="#8DDDD4"/>
+  <path d="M298 214H422" stroke="#D4F4EF" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="142" cy="234" r="54" fill="#D9F6F0"/>
+  <circle cx="574" cy="668" r="66" fill="#E2FAF5"/>
+  <text x="82" y="130" fill="#4D8D84" font-size="34" font-family="Arial, sans-serif" font-weight="700">steady intake</text>
+  <text x="82" y="174" fill="#7EA79F" font-size="22" font-family="Arial, sans-serif">water rhythm placeholder</text>
+</svg>

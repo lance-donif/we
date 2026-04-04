@@ -1,0 +1,102 @@
+/* base.css — MONDAY 全局设计系统 */
+
+/* ===== 设计令牌 ===== */
+:root {
+  /* 排版 */
+  --font-sans: 'DM Sans', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  --font-serif: 'Noto Serif SC', 'Songti SC', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* 结构色 */
+  --c-bg: #f4f2ee;
+  --c-bg-paper: rgba(250, 252, 255, 0.96);
+  --c-text-main: #1a1a1a;
+  --c-text-secondary: #5a5a5a;
+  --c-text-muted: #8a8a8a;
+  --c-border: rgba(0, 0, 0, 0.07);
+  --c-border-light: rgba(255, 255, 255, 0.85);
+  --c-white: #ffffff;
+
+  /* 品牌色 */
+  --c-brand: #2d8a56;
+  --c-brand-light: #e8f5ee;
+
+  /* 阴影 */
+  --shadow-panel:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-elevated:
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 20px 48px rgba(0, 0, 0, 0.08);
+
+  /* 圆角 */
+  --radius-panel: 14px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-pill: 100px;
+
+  /* 过渡 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+}
+
+/* ===== 硬重置 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--c-text-main);
+  line-height: 1.5;
+  background-color: var(--c-bg);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.22); }
+
+/* ===== 基础元素 ===== */
+button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  font-size: inherit;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+/* ===== 辅助类 ===== */
+.txt-secondary { color: var(--c-text-secondary); }
+.txt-muted { color: var(--c-text-muted); }
+.txt-hint { font-size: 12px; color: var(--c-text-muted); letter-spacing: 0.02em; }
+.txt-divider { color: var(--c-border); margin: 0 6px; font-weight: 300; user-select: none; }
+
+/* ===== 交互状态 ===== */
+.hover-dim { transition: opacity var(--duration-fast); }
+.hover-dim:hover { opacity: 0.65; }
+.hover-lift { transition: transform var(--duration-fast) var(--ease-out); }
+.hover-lift:active { transform: scale(0.97); }

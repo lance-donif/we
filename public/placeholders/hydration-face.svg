@@ -1,0 +1,12 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#EEF8F5"/>
+  <rect x="48" y="48" width="624" height="804" rx="34" fill="#FBFFFE"/>
+  <ellipse cx="360" cy="348" rx="176" ry="206" fill="#E6CBB8"/>
+  <circle cx="294" cy="328" r="20" fill="#7C5648"/>
+  <circle cx="426" cy="328" r="20" fill="#7C5648"/>
+  <path d="M314 424C336.667 438.667 367.333 438.667 406 424" stroke="#915F51" stroke-width="16" stroke-linecap="round"/>
+  <path d="M250 604C288.667 552.667 325.333 527 360 527C394.667 527 431.333 552.667 470 604V796H250V604Z" fill="#C1E8DE"/>
+  <circle cx="550" cy="194" r="60" fill="#D2F3EB"/>
+  <text x="82" y="130" fill="#4B8B7D" font-size="34" font-family="Arial, sans-serif" font-weight="700">soft finish</text>
+  <text x="82" y="174" fill="#88A9A1" font-size="22" font-family="Arial, sans-serif">hydrated face placeholder</text>
+</svg>

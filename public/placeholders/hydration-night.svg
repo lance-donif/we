@@ -1,0 +1,13 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#EEF1FA"/>
+  <rect x="48" y="48" width="624" height="804" rx="34" fill="#FAFBFF"/>
+  <circle cx="550" cy="188" r="78" fill="#D8DEFF"/>
+  <circle cx="526" cy="176" r="12" fill="#FAFBFF"/>
+  <rect x="186" y="612" width="348" height="118" rx="30" fill="#CBD4F4"/>
+  <rect x="228" y="560" width="110" height="56" rx="20" fill="#F0F3FF"/>
+  <rect x="436" y="464" width="74" height="182" rx="26" fill="#F8FBFE"/>
+  <rect x="448" y="434" width="50" height="66" rx="24" fill="#F8FBFE"/>
+  <rect x="454" y="530" width="38" height="92" rx="14" fill="#AFC5FF"/>
+  <text x="82" y="126" fill="#6678B6" font-size="34" font-family="Arial, sans-serif" font-weight="700">evening slowdown</text>
+  <text x="82" y="170" fill="#96A1C4" font-size="22" font-family="Arial, sans-serif">late water placeholder</text>
+</svg>

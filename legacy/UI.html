@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONDAY - Web Markdown (分屏版)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="UI.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- SVG Noise Filter for Background -->
+  <svg style="display: none;">
+    <filter id="grain-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.08 0" />
+    </filter>
+  </svg>
+
+  <div class="app-background"></div>
+
+  <!-- 主工作台：严格的 1fr 1fr 网格 -->
+  <div class="workbench-grid">
+    
+    <!-- ==================== 左侧版图：撰写大区 (50%) ==================== -->
+    <main class="pane editor-pane paper-layer">
+      
+      <!-- 纯文本导航顶栏 -->
+      <header class="pane-header layout-between">
+        <div class="layout-left">
+          <h1 class="brand-title">MONDAY</h1>
+          <span class="txt-desc">极致排版 · 化繁为简</span>
+        </div>
+        <div class="layout-right">
+          <button class="btn-text hover-opacity">[ 新建文章 ]</button>
+          <span class="txt-divider">|</span>
+          <button class="btn-text hover-opacity">[ 我的文档 ]</button>
+          <span class="txt-divider">|</span>
+          <button class="btn-text hover-opacity">[ 设置 ]</button>
+        </div>
+      </header>
+
+      <!-- 纯文字工具与模板选择 -->
+      <div class="toolbar-area">
+        <div class="tool-section">
+          <span class="tool-label">模板:</span>
+          <div class="tpl-list">
+            <button class="btn-pill active" data-tpl="tpl-default">基准绿</button>
+            <button class="btn-pill" data-tpl="tpl-letter">信纸风</button>
+            <button class="btn-pill" data-tpl="tpl-pink">粉桃底</button>
+          </div>
+        </div>
+        
+        <div class="tool-section">
+          <span class="tool-label">排版:</span>
+          <div class="md-tools">
+            <button class="btn-text tool-btn">[ 加粗 ]</button>
+            <button class="btn-text tool-btn">[ 斜体 ]</button>
+            <button class="btn-text tool-btn">[ 引用 ]</button>
+            <button class="btn-text tool-btn">[ 列表 ]</button>
+            <button class="btn-text tool-btn">[ 链接 ]</button>
+            <button class="btn-text tool-btn">[ 图片 ]</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 输入核心 -->
+      <div class="editor-body">
+        <input type="text" class="md-title-input" value="如何设计一个爆款公众号?" placeholder="在这里输入大标题...">
+        <textarea id="md-textarea" class="md-textarea" placeholder="从这里开始您的内容创作... (完全支持 Markdown 解析与实时预览)">这里是一段正文示例。这通常是一段关于产品设计的反思。
+
+## 什么是好的设计？
+
+好的设计是尽可能的少设计。它就像是一张简单的**淡蓝色折叠长方形纸片**，安静地展示着我们需要传达的核心。
+
+> 少即是多，但少并不意味着简陋。
+> —— 迪特·拉姆斯
+
+- 极致留白
+- 无衬线文字
+- 注重阅读本身的体验</textarea>
+      </div>
+
+      <div class="pane-footer txt-hint">
+        字数统计：541 字 &nbsp;&nbsp;&nbsp; 状态：已自动保存于本地缓存
+      </div>
+
+    </main>
+
+    <!-- ==================== 右侧版图：微信排版预览区 (50%) ==================== -->
+    <aside class="pane preview-pane paper-layer">
+      
+      <header class="pane-header layout-between">
+        <div class="layout-left">
+          <span class="txt-desc">微信公众号文章 实时渲染展示</span>
+        </div>
+        <div class="layout-right">
+          <!-- 放弃花哨按钮，硬核大文字直击痛点 -->
+          <button id="btn-copy" class="btn-primary-text hover-scale">[ 一键复制发布格式 HTML ]</button>
+        </div>
+      </header>
+
+      <!-- 微信正文载体：占满剩下的整列，舍弃手机黑框，采用自适应平铺 -->
+      <div class="preview-body">
+        
+        <!-- #wx-render-box 才是真正的被强入行内样式复制走的目标 -->
+        <div id="wx-render-box" class="wx-compiled-content tpl-default">
+          <section class="wx-post">
+            <h1 class="wx-title">如何设计一个爆款公众号?</h1>
+            <div class="wx-meta">
+              <span class="wx-author">MONDAY排版设计</span>
+              <span class="wx-date">2026-04-03</span>
+            </div>
+            
+            <div class="wx-content">
+              <p class="wx-p">这里是一段正文示例。这通常是一段关于产品设计的反思。</p>
+              
+              <h2 class="wx-h2"><span class="wx-h2-decor"></span>什么是好的设计？</h2>
+              <p class="wx-p">好的设计是尽可能的少设计。它就像是一张简单的<strong class="wx-strong">淡蓝色折叠长方形纸片</strong>，安静地展示着我们需要传达的核心。</p>
+              
+              <blockquote class="wx-quote">
+                <p class="wx-p" style="margin-bottom:0;">少即是多，但少并不意味着简陋。<br>—— 迪特·拉姆斯</p>
+              </blockquote>
+              
+              <ul class="wx-ul">
+                <li class="wx-li">极致留白</li>
+                <li class="wx-li">无衬线文字</li>
+                <li class="wx-li">注重阅读本身的体验</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- 轻量纯文字 Toast -->
+  <div id="toast-msg" class="toast-text">
+    [ 复制成功！请直接前往微信编辑器粘贴 ]
+  </div>
+
+  <script src="UI.js"></script>
+</body>
+</html>

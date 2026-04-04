@@ -1,0 +1,11 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="900" rx="40" fill="#F3EEE8"/>
+  <rect x="52" y="52" width="616" height="796" rx="34" fill="#FFFDF9"/>
+  <circle cx="360" cy="332" r="198" fill="#F9D8C6"/>
+  <ellipse cx="296" cy="322" rx="26" ry="20" fill="#BC8474"/>
+  <ellipse cx="424" cy="322" rx="26" ry="20" fill="#BC8474"/>
+  <path d="M302 448C334 474 386 474 418 448" stroke="#B87562" stroke-width="18" stroke-linecap="round"/>
+  <path d="M206 638C252 560 303 520 360 520C417 520 468 560 514 638V792H206V638Z" fill="#E7CDBE"/>
+  <text x="84" y="124" fill="#B98470" font-size="34" font-family="Arial, sans-serif" font-weight="700">Skin Comfort Study</text>
+  <text x="84" y="168" fill="#C6AB9F" font-size="22" font-family="Arial, sans-serif">soft hydration placeholder</text>
+</svg>
