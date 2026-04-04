@@ -5,10 +5,15 @@ export function createMagazineTemplate(template) {
     ...template,
     cssText: `${sharedCssText}\n${template.cssText}`,
     copyRichText(clone) {
+      const isBalkan = template.id === 'tpl-magazine-balkan'
+      const balkanNoise =
+        'background-image:url(https://fe-static.xhscdn.com/formula-static/slytherinh5/public/img/noise.1ab1741.svg); background-repeat:repeat;'
       const serifStack = "'Noto Serif SC','Songti SC','STSong',Georgia,'Times New Roman',serif"
       const sansStack = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif"
       const sectionPaper =
-        'background-image:linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.08)), repeating-linear-gradient(0deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 5px);'
+        isBalkan
+          ? balkanNoise
+          : 'background-image:linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.08)), repeating-linear-gradient(0deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 5px);'
 
       clone.setAttribute(
         'style',
@@ -16,7 +21,7 @@ export function createMagazineTemplate(template) {
           'width:100%',
           'max-width:450px',
           'margin:0 auto',
-          'background:none',
+          isBalkan ? `background:${template.sectionPalette[0].bg}` : 'background:none',
           'border-radius:0',
           'overflow:visible',
           `font-family:${serifStack}`,
@@ -103,7 +108,9 @@ export function createMagazineTemplate(template) {
         section.querySelectorAll('.wx-callout').forEach((card) => {
           card.setAttribute(
             'style',
-            `margin-top:20px; padding:14px 14px 13px; border-radius:18px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);`
+            isBalkan
+              ? `margin-top:20px; padding:14px 14px 13px; border-radius:18px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);`
+              : `margin-top:20px; padding:14px 14px 13px; border-radius:18px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.38);`
           )
           card.querySelectorAll('.wx-callout-item').forEach((item, itemIndex) => {
             item.setAttribute(
@@ -118,7 +125,9 @@ export function createMagazineTemplate(template) {
         section.querySelectorAll('.wx-note').forEach((note) => {
           note.setAttribute(
             'style',
-            'margin-top:20px; padding:14px 14px 13px; border-radius:18px; background:rgba(255,255,255,0.72); border:1px solid rgba(255,255,255,0.74); box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);'
+            isBalkan
+              ? 'margin-top:20px; padding:14px 14px 13px; border-radius:18px; background-color:rgba(255,255,255,0.78); border:1px solid rgba(255,255,255,0.54); box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);'
+              : 'margin-top:20px; padding:14px 14px 13px; border-radius:18px; background:rgba(255,255,255,0.72); border:1px solid rgba(255,255,255,0.74); box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);'
           )
           note.querySelectorAll('.wx-note-line').forEach((line, lineIndex) => {
             line.setAttribute(
@@ -131,7 +140,9 @@ export function createMagazineTemplate(template) {
         section.querySelectorAll('.wx-highlight').forEach((highlight) => {
           highlight.setAttribute(
             'style',
-            `margin-top:20px; display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start; padding:12px 14px; border-radius:16px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.45);`
+            isBalkan
+              ? `margin-top:20px; display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start; padding:12px 14px; border-radius:16px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.45);`
+              : `margin-top:20px; display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start; padding:12px 14px; border-radius:16px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.45);`
           )
           const icon = highlight.querySelector('.wx-highlight-icon')
           if (icon) {
@@ -152,7 +163,9 @@ export function createMagazineTemplate(template) {
         section.querySelectorAll('.wx-scheme-card').forEach((card) => {
           card.setAttribute(
             'style',
-            `margin-top:22px; padding:12px; border-radius:20px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.46), 0 10px 22px rgba(34,28,21,0.06);`
+            isBalkan
+              ? `margin-top:22px; padding:12px; border-radius:20px; background-color:${palette.cardBg}; border:1px solid rgba(255,255,255,0.34); box-shadow:inset 0 1px 0 rgba(255,255,255,0.46), 0 10px 22px rgba(34,28,21,0.06);`
+              : `margin-top:22px; padding:12px; border-radius:20px; background:${palette.cardBg}; box-shadow:inset 0 1px 0 rgba(255,255,255,0.46), 0 10px 22px rgba(34,28,21,0.06);`
           )
           const label = card.querySelector('.wx-scheme-label')
           if (label) {
@@ -167,7 +180,12 @@ export function createMagazineTemplate(template) {
           }
           const media = card.querySelector('.wx-scheme-media')
           if (media) {
-            media.setAttribute('style', 'overflow:hidden; border-radius:16px; background:rgba(255,255,255,0.76);')
+            media.setAttribute(
+              'style',
+              isBalkan
+                ? 'overflow:hidden; border-radius:16px; background-color:rgba(255,255,255,0.78); border:1px solid rgba(255,255,255,0.54);'
+                : 'overflow:hidden; border-radius:16px; background:rgba(255,255,255,0.76);'
+            )
           }
           const image = card.querySelector('.wx-scheme-image')
           if (image) {
@@ -208,7 +226,9 @@ export function createMagazineTemplate(template) {
           grid.querySelectorAll('.wx-media-frame').forEach((frame) => {
             frame.setAttribute(
               'style',
-              `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:16px; background:rgba(255,255,255,0.76); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.55);`
+              isBalkan
+                ? `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:16px; background-color:rgba(255,255,255,0.78); border:1px solid rgba(255,255,255,0.54); box-shadow:0 10px 22px rgba(34,28,21,0.05), inset 0 0 0 1px rgba(255,255,255,0.2);`
+                : `position:relative; overflow:hidden; min-height:${count === 3 ? 162 : 186}px; border-radius:16px; background:rgba(255,255,255,0.76); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.55);`
             )
           })
           grid.querySelectorAll('.wx-img').forEach((image) => {

@@ -1,8 +1,6 @@
 .tpl-magazine-balkan .wx-post {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.16)),
-    repeating-linear-gradient(0deg, rgba(117, 107, 93, 0.02) 0 1px, rgba(255, 255, 255, 0) 1px 5px),
-    #f1efea;
+  --wx-noise-image: url("https://fe-static.xhscdn.com/formula-static/slytherinh5/public/img/noise.1ab1741.svg");
+  background: #f1efea;
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 1) {
@@ -39,8 +37,36 @@
 
 .tpl-magazine-balkan .wx-section {
   background-color: var(--wx-section-bg);
+  background-image: var(--wx-noise-image);
+  background-repeat: repeat;
 }
 
 .tpl-magazine-balkan .wx-page {
   color: var(--wx-page-color);
+}
+
+.tpl-magazine-balkan .wx-callout,
+.tpl-magazine-balkan .wx-highlight,
+.tpl-magazine-balkan .wx-scheme-card {
+  background-color: var(--wx-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+.tpl-magazine-balkan .wx-note,
+.tpl-magazine-balkan .wx-scheme-media,
+.tpl-magazine-balkan .wx-media-frame {
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.tpl-magazine-balkan .wx-scheme-card {
+  box-shadow:
+    0 10px 22px rgba(34, 28, 21, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.46);
+}
+
+.tpl-magazine-balkan .wx-media-frame {
+  box-shadow:
+    0 10px 22px rgba(34, 28, 21, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
