@@ -7,9 +7,9 @@ export const magazineTips = createMagazineTemplate({
   className: 'tpl-magazine-tips',
   pageStart: 1,
   sectionPalette: [
-    { bg: '#f5f8fd', accent: '#2fa5ee', number: '#d9e8fb', h3: '#28557a', cardBg: '#e8f1fb' },
-    { bg: '#f4fbfb', accent: '#31a99a', number: '#d3ece6', h3: '#275f58', cardBg: '#e3f3ef' },
-    { bg: '#f6fbf5', accent: '#59aa6b', number: '#dcecd9', h3: '#335d3d', cardBg: '#e8f3e6' },
+    { bg: '#fafdff', accent: '#14aafb', number: '#d0edff', h3: '#064166', cardBg: '#e7f6ff' },
+    { bg: '#faffff', accent: '#07bca4', number: '#b8fffa', h3: '#06665b', cardBg: '#e7ffff' },
+    { bg: '#fafffc', accent: '#07bc49', number: '#d0ffe2', h3: '#06662b', cardBg: '#e7fff1' },
   ],
   cssText: privateCssText,
 })

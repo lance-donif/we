@@ -7,10 +7,10 @@ export const magazineBalkan = createMagazineTemplate({
   className: 'tpl-magazine-balkan',
   pageStart: 0,
   sectionPalette: [
-    { bg: '#f1efea', accent: '#4f4b47', number: '#d9d3cb', h3: '#272320', cardBg: '#e7e2db' },
-    { bg: '#fdf8ee', accent: '#d87a3f', number: '#efd9c2', h3: '#7b4a27', cardBg: '#f6ebdc' },
-    { bg: '#f6fbf5', accent: '#4a9f62', number: '#d8ead8', h3: '#2e5f39', cardBg: '#eaf3e7' },
-    { bg: '#f3f0eb', accent: '#56514b', number: '#d9d1c7', h3: '#2d2925', cardBg: '#e6dfd7' },
+    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#181a1b', cardBg: '#ececec' },
+    { bg: '#fffdfa', accent: '#fb6614', number: '#ffe9d0', h3: '#662b06', cardBg: '#fff5e7' },
+    { bg: '#fafffc', accent: '#07bc49', number: '#d0ffe2', h3: '#06662b', cardBg: '#e7fff1' },
+    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#181a1b', cardBg: '#ececec' },
   ],
   cssText: privateCssText,
 })

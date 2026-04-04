@@ -7,10 +7,10 @@ export const magazineChangsha = createMagazineTemplate({
   className: 'tpl-magazine-changsha',
   pageStart: 1,
   sectionPalette: [
-    { bg: '#fdf8ef', accent: '#d87a3f', number: '#efd9c2', h3: '#7b4a27', cardBg: '#f6ebdc' },
-    { bg: '#f4f7fd', accent: '#6a86d9', number: '#dbe3f5', h3: '#324675', cardBg: '#e8eef9' },
-    { bg: '#fcf3f6', accent: '#cf6f8d', number: '#efd8e0', h3: '#7c4158', cardBg: '#f6e6ec' },
-    { bg: '#fcfbf1', accent: '#c4b04b', number: '#e9e0b6', h3: '#6a6232', cardBg: '#f3eed8' },
+    { bg: '#fffdfa', accent: '#fb6614', number: '#ffe9d0', h3: '#662b06', cardBg: '#fff5e7' },
+    { bg: '#fafbff', accent: '#526fff', number: '#d0d9ff', h3: '#061166', cardBg: '#e7ecff' },
+    { bg: '#fffafc', accent: '#cf6f8d', number: '#efd8e0', h3: '#7c4158', cardBg: '#ffedf0' },
+    { bg: '#fffffa', accent: '#ebcd04', number: '#fff9af', h3: '#484004', cardBg: '#ffffe7' },
   ],
   cssText: privateCssText,
 })

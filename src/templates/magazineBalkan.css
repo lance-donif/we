@@ -1,38 +1,38 @@
 .tpl-magazine-balkan .wx-post {
   --wx-noise-image: url("https://fe-static.xhscdn.com/formula-static/slytherinh5/public/img/noise.1ab1741.svg");
-  background: #f1efea;
+  background: #f5f5f5;
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 1) {
-  --wx-section-bg: #f1efea;
-  --wx-accent: #4f4b47;
-  --wx-page-color: #d9d3cb;
-  --wx-h3-color: #272320;
-  --wx-card-bg: #e7e2db;
+  --wx-section-bg: #f5f5f5;
+  --wx-accent: #44494b;
+  --wx-page-color: #dcdddd;
+  --wx-h3-color: #181a1b;
+  --wx-card-bg: #ececec;
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 2) {
-  --wx-section-bg: #fdf8ee;
-  --wx-accent: #d87a3f;
-  --wx-page-color: #efd9c2;
-  --wx-h3-color: #7b4a27;
-  --wx-card-bg: #f6ebdc;
+  --wx-section-bg: #fffdfa;
+  --wx-accent: #fb6614;
+  --wx-page-color: #ffe9d0;
+  --wx-h3-color: #662b06;
+  --wx-card-bg: #fff5e7;
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 3) {
-  --wx-section-bg: #f6fbf5;
-  --wx-accent: #4a9f62;
-  --wx-page-color: #d8ead8;
-  --wx-h3-color: #2e5f39;
-  --wx-card-bg: #eaf3e7;
+  --wx-section-bg: #fafffc;
+  --wx-accent: #07bc49;
+  --wx-page-color: #d0ffe2;
+  --wx-h3-color: #06662b;
+  --wx-card-bg: #e7fff1;
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 4) {
-  --wx-section-bg: #f3f0eb;
-  --wx-accent: #56514b;
-  --wx-page-color: #d9d1c7;
-  --wx-h3-color: #2d2925;
-  --wx-card-bg: #e6dfd7;
+  --wx-section-bg: #f5f5f5;
+  --wx-accent: #44494b;
+  --wx-page-color: #dcdddd;
+  --wx-h3-color: #181a1b;
+  --wx-card-bg: #ececec;
 }
 
 .tpl-magazine-balkan .wx-section {

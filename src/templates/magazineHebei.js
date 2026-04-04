@@ -7,10 +7,10 @@ export const magazineHebei = createMagazineTemplate({
   className: 'tpl-magazine-hebei',
   pageStart: 0,
   sectionPalette: [
-    { bg: '#f1efea', accent: '#4f4b47', number: '#d9d3cb', h3: '#272320', cardBg: '#e7e2db' },
-    { bg: '#f4fbfb', accent: '#31a99a', number: '#d3ece6', h3: '#275f58', cardBg: '#e3f3ef' },
-    { bg: '#fcfbf1', accent: '#c4b04b', number: '#e9e0b6', h3: '#6a6232', cardBg: '#f3eed8' },
-    { bg: '#f5f8fd', accent: '#6a86d9', number: '#dbe3f5', h3: '#324675', cardBg: '#e8eef9' },
+    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#181a1b', cardBg: '#ececec' },
+    { bg: '#faffff', accent: '#07bca4', number: '#b8fffa', h3: '#06665b', cardBg: '#e7ffff' },
+    { bg: '#fffffa', accent: '#ebcd04', number: '#fff9af', h3: '#484004', cardBg: '#ffffe7' },
+    { bg: '#fafbff', accent: '#526fff', number: '#d0d9ff', h3: '#061166', cardBg: '#e7ecff' },
   ],
   cssText: privateCssText,
 })

@@ -5,6 +5,7 @@ import { magazineHebei } from './magazineHebei.js'
 import { magazineTips } from './magazineTips.js'
 import { magazineXinjiang } from './magazineXinjiang.js'
 import { magazineChangsha } from './magazineChangsha.js'
+import { magazineMarket } from './magazineMarket.js'
 
 export const templates = [
   magazineA,
@@ -14,4 +15,5 @@ export const templates = [
   magazineTips,
   magazineXinjiang,
   magazineChangsha,
+  magazineMarket,
 ]

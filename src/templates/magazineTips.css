@@ -2,31 +2,31 @@
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.18)),
     repeating-linear-gradient(0deg, rgba(110, 121, 146, 0.02) 0 1px, rgba(255, 255, 255, 0) 1px 5px),
-    #f5f8fd;
+    #fafdff;
 }
 
 .tpl-magazine-tips .wx-section:nth-of-type(3n + 1) {
-  --wx-section-bg: #f5f8fd;
-  --wx-accent: #2fa5ee;
-  --wx-page-color: #d9e8fb;
-  --wx-h3-color: #28557a;
-  --wx-card-bg: #e8f1fb;
+  --wx-section-bg: #fafdff;
+  --wx-accent: #14aafb;
+  --wx-page-color: #d0edff;
+  --wx-h3-color: #064166;
+  --wx-card-bg: #e7f6ff;
 }
 
 .tpl-magazine-tips .wx-section:nth-of-type(3n + 2) {
-  --wx-section-bg: #f4fbfb;
-  --wx-accent: #31a99a;
-  --wx-page-color: #d3ece6;
-  --wx-h3-color: #275f58;
-  --wx-card-bg: #e3f3ef;
+  --wx-section-bg: #faffff;
+  --wx-accent: #07bca4;
+  --wx-page-color: #b8fffa;
+  --wx-h3-color: #06665b;
+  --wx-card-bg: #e7ffff;
 }
 
 .tpl-magazine-tips .wx-section:nth-of-type(3n + 3) {
-  --wx-section-bg: #f6fbf5;
-  --wx-accent: #59aa6b;
-  --wx-page-color: #dcecd9;
-  --wx-h3-color: #335d3d;
-  --wx-card-bg: #e8f3e6;
+  --wx-section-bg: #fafffc;
+  --wx-accent: #07bc49;
+  --wx-page-color: #d0ffe2;
+  --wx-h3-color: #06662b;
+  --wx-card-bg: #e7fff1;
 }
 
 .tpl-magazine-tips .wx-section {
