@@ -22,7 +22,9 @@
         <button class="tool-btn btn-text" @click="$emit('insert', '\n#### 小标题|大标题', '')">特写</button>
         <button class="tool-btn btn-text" @click="$emit('insert', '\n> ', '')">说明卡</button>
         <button class="tool-btn btn-text" @click="$emit('insert', '\n- ', '')">要点卡</button>
-        <button class="tool-btn btn-text" @click="$emit('insert', '\n![图片说明](', ')')">图片</button>
+        <button class="tool-btn btn-text" @click="$emit('insert', '\n!! ', '')">高亮块</button>
+        <button class="tool-btn btn-text" @click="$emit('insert', '\n@@ 推荐方案|标题|时间/数量|简短说明|图片地址', '')">方案卡</button>
+        <button class="tool-btn btn-text" @click="$emit('insert', '\n![](', ')')">图片</button>
       </div>
     </div>
   </div>

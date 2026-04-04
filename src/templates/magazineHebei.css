@@ -1,0 +1,46 @@
+.tpl-magazine-hebei .wx-post {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.18)),
+    repeating-linear-gradient(0deg, rgba(118, 110, 98, 0.018) 0 1px, rgba(255, 255, 255, 0) 1px 5px),
+    #f1efea;
+}
+
+.tpl-magazine-hebei .wx-section:nth-of-type(4n + 1) {
+  --wx-section-bg: #f1efea;
+  --wx-accent: #4f4b47;
+  --wx-page-color: #d9d3cb;
+  --wx-h3-color: #272320;
+  --wx-card-bg: #e7e2db;
+}
+
+.tpl-magazine-hebei .wx-section:nth-of-type(4n + 2) {
+  --wx-section-bg: #f4fbfb;
+  --wx-accent: #31a99a;
+  --wx-page-color: #d3ece6;
+  --wx-h3-color: #275f58;
+  --wx-card-bg: #e3f3ef;
+}
+
+.tpl-magazine-hebei .wx-section:nth-of-type(4n + 3) {
+  --wx-section-bg: #fcfbf1;
+  --wx-accent: #c4b04b;
+  --wx-page-color: #e9e0b6;
+  --wx-h3-color: #6a6232;
+  --wx-card-bg: #f3eed8;
+}
+
+.tpl-magazine-hebei .wx-section:nth-of-type(4n + 4) {
+  --wx-section-bg: #f5f8fd;
+  --wx-accent: #6a86d9;
+  --wx-page-color: #dbe3f5;
+  --wx-h3-color: #324675;
+  --wx-card-bg: #e8eef9;
+}
+
+.tpl-magazine-hebei .wx-section {
+  background-color: var(--wx-section-bg);
+}
+
+.tpl-magazine-hebei .wx-page {
+  color: var(--wx-page-color);
+}

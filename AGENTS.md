@@ -6,7 +6,7 @@
 
 **MONDAY** 是一个微信公众号文章排版编辑器，基于 Vite + Vue 3 构建。核心功能：
 - Markdown 编辑 → 微信公众号富文本实时预览
-- 2 套杂志模板（对应圆周旅迹参考页 id=10 / id=16）
+- 7 套杂志模板（对应圆周旅迹多篇参考页）
 - 一键复制为微信编辑器可粘贴的富文本 HTML
 
 ## 技术栈
@@ -53,7 +53,12 @@ npm run preview  # 预览生产构建
 │   ├── magazineBase.js           # 模板共享复制逻辑
 │   ├── magazineShared.css        # 杂志语义共享样式
 │   ├── magazineA.js/.css         # 参考页 id=10 模板
-│   └── magazineB.js/.css         # 参考页 id=16 模板
+│   ├── magazineB.js/.css         # 参考页 id=16 模板
+│   ├── magazineBalkan.js/.css    # 参考页 id=51 模板
+│   ├── magazineHebei.js/.css     # 参考页 id=50 模板
+│   ├── magazineTips.js/.css      # 参考页 id=18 模板
+│   ├── magazineXinjiang.js/.css  # 参考页 id=45 模板
+│   └── magazineChangsha.js/.css  # 参考页 id=29 模板
 ├── articles/                     # 公众号文章 Markdown 存储
 ├── public/placeholders/          # 杂志示例占位图
 ├── legacy/                       # 旧版静态 HTML/CSS/JS 备份
@@ -119,11 +124,33 @@ npm run preview  # 预览生产构建
 - 3 色轮换：绿 → 黄 → 橙
 - 页码从 `01` 开始
 
+### 杂志 · 巴尔干（tpl-magazine-balkan）
+- 对齐参考页：`id=51`
+- 灰纸 + 橙绿节奏
+
+### 杂志 · 河北（tpl-magazine-hebei）
+- 对齐参考页：`id=50`
+- 灰 / 青 / 黄 / 蓝分段轮换
+
+### 杂志 · 锦囊（tpl-magazine-tips）
+- 对齐参考页：`id=18`
+- 蓝青系提示感
+
+### 杂志 · 新疆（tpl-magazine-xinjiang）
+- 对齐参考页：`id=45`
+- 灰白 + 冰蓝节奏
+
+### 杂志 · 长沙（tpl-magazine-changsha）
+- 对齐参考页：`id=29`
+- 橙蓝粉黄对比
+
 ## Markdown 语义约定
 
 - `## 标题`：开启新章节，并自动生成页码
 - `### 副标题`：章节副标题
 - `#### 小标题|大标题`：特写双层标题
+- `!! 关键句`：高亮事实块
+- `@@ 标签|标题|时间/数量|简短说明|图片地址`：大卡片式方案块
 - 连续图片语法：自动组成 2 列或 3 列杂志图组
 - 无序列表：渲染为浅色信息卡
 - `> 引用`：渲染为圆角说明卡

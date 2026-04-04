@@ -57,8 +57,10 @@ export function useMarkdown(markdownRef, templateRef) {
 
       if (line.startsWith('### ')) {
         flushCards()
-        const text = inlineFormat(line.slice(4))
-        html += `<h3 class="wx-h3">${text}</h3>`
+        const rawText = line.slice(4).trim()
+        const text = inlineFormat(rawText)
+        const moodOnly = /^[\p{Extended_Pictographic}\uFE0F\s.,，。!！?？~\-—·•]+$/u.test(rawText)
+        html += `<h3 class="wx-h3${moodOnly ? ' wx-h3-mood' : ''}">${text}</h3>`
         continue
       }
 
@@ -88,6 +90,42 @@ export function useMarkdown(markdownRef, templateRef) {
         continue
       }
 
+      if (line.startsWith('!! ')) {
+        flushCards()
+        html += `
+          <div class="wx-highlight">
+            <span class="wx-highlight-icon" aria-hidden="true"></span>
+            <div class="wx-highlight-text">${inlineFormat(line.slice(3).trim())}</div>
+          </div>
+        `
+        continue
+      }
+
+      if (line.startsWith('@@ ')) {
+        flushCards()
+        const [label = '', title = '', meta = '', desc = '', image = ''] = line
+          .slice(3)
+          .split('|')
+          .map(item => item.trim())
+
+        html += `
+          <article class="wx-scheme-card">
+            <div class="wx-scheme-label">${inlineFormat(label || '同款方案')}</div>
+            <div class="wx-scheme-content">
+              <div class="wx-scheme-media">
+                <img class="wx-scheme-image" src="${image}" alt="" />
+              </div>
+              <div class="wx-scheme-body">
+                <h4 class="wx-scheme-title">${inlineFormat(title)}</h4>
+                <p class="wx-scheme-meta">${inlineFormat(meta)}</p>
+                <p class="wx-scheme-desc">${inlineFormat(desc)}</p>
+              </div>
+            </div>
+          </article>
+        `
+        continue
+      }
+
       const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)/)
       if (imgMatch) {
         flushCards()
@@ -103,12 +141,13 @@ export function useMarkdown(markdownRef, templateRef) {
 
         html += `<div class="wx-media-grid columns-${images.length === 2 ? 2 : 3}">`
         images.slice(0, 3).forEach(([, alt, src]) => {
+          const trimmedAlt = alt.trim()
           html += `
             <figure class="wx-media-card">
               <div class="wx-media-frame">
                 <img class="wx-img" src="${src}" alt="${alt}" />
               </div>
-              <figcaption class="wx-media-caption">${inlineFormat(alt)}</figcaption>
+              ${trimmedAlt ? `<figcaption class="wx-media-caption">${inlineFormat(trimmedAlt)}</figcaption>` : ''}
             </figure>
           `
         })

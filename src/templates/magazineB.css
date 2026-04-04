@@ -1,33 +1,36 @@
 .tpl-magazine-b .wx-post {
-  background: #fbfcf9;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.18)),
+    repeating-linear-gradient(0deg, rgba(112, 126, 103, 0.018) 0 1px, rgba(255, 255, 255, 0) 1px 5px),
+    #f7fcf5;
 }
 
 .tpl-magazine-b .wx-section:nth-of-type(3n + 1) {
-  --wx-section-bg: #fafffc;
-  --wx-accent: #07bc49;
-  --wx-page-color: #d0ffe2;
-  --wx-h3-color: #06662b;
-  --wx-card-bg: #e6fcee;
+  --wx-section-bg: #f7fcf5;
+  --wx-accent: #47a45a;
+  --wx-page-color: #dbead7;
+  --wx-h3-color: #305f35;
+  --wx-card-bg: #e9f4e7;
 }
 
 .tpl-magazine-b .wx-section:nth-of-type(3n + 2) {
-  --wx-section-bg: #fffffa;
-  --wx-accent: #ebcd04;
-  --wx-page-color: #fff9af;
-  --wx-h3-color: #484004;
-  --wx-card-bg: #fdfbe5;
+  --wx-section-bg: #fdfcf3;
+  --wx-accent: #c9b447;
+  --wx-page-color: #eee5b7;
+  --wx-h3-color: #6e6534;
+  --wx-card-bg: #f5f0d9;
 }
 
 .tpl-magazine-b .wx-section:nth-of-type(3n + 3) {
-  --wx-section-bg: #fffdf0;
-  --wx-accent: #fb6614;
-  --wx-page-color: #ffe9d0;
-  --wx-h3-color: #662b06;
-  --wx-card-bg: #fff3e5;
+  --wx-section-bg: #fdf7ef;
+  --wx-accent: #cf7f4b;
+  --wx-page-color: #ecd6c0;
+  --wx-h3-color: #765238;
+  --wx-card-bg: #f5e8dd;
 }
 
 .tpl-magazine-b .wx-section {
-  background: var(--wx-section-bg);
+  background-color: var(--wx-section-bg);
 }
 
 .tpl-magazine-b .wx-page {
