@@ -7,9 +7,6 @@ export function createMagazineTemplate(template) {
     copyRichText(clone) {
       const serifStack = "'Noto Serif SC','Songti SC','STSong',Georgia,'Times New Roman',serif"
       const sansStack = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif"
-      const rootPalette = template.sectionPalette[0]
-      const postPaper =
-        `background-color:${rootPalette.bg}; background-image:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.16)), repeating-linear-gradient(0deg, rgba(117,107,93,0.02) 0 1px, rgba(255,255,255,0) 1px 5px);`
       const sectionPaper =
         'background-image:linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.08)), repeating-linear-gradient(0deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 5px);'
 
@@ -19,9 +16,9 @@ export function createMagazineTemplate(template) {
           'width:100%',
           'max-width:450px',
           'margin:0 auto',
-          postPaper,
-          'border-radius:32px',
-          'overflow:hidden',
+          'background:none',
+          'border-radius:0',
+          'overflow:visible',
           `font-family:${serifStack}`,
           'box-sizing:border-box',
         ].join('; ')

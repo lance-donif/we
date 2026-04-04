@@ -1,6 +1,5 @@
 <template>
   <div class="workbench-grid">
-    <!-- 左侧：编辑区 -->
     <EditorPane
       v-model:title="title"
       v-model:content="content"
@@ -9,21 +8,19 @@
       @set-template="setTemplate"
     />
 
-    <!-- 右侧：预览区 -->
     <PreviewPane
-      :rendered-h-t-m-l="parsedHTML"
+      :rendered-html="parsedHTML"
       :template-class="activeTemplate.className"
       :template="activeTemplate"
       @copy="handleCopy"
     />
   </div>
 
-  <!-- Toast -->
   <ToastMessage :message="toastMessage" :visible="toastVisible" />
 </template>
 
 <script setup>
-import { onBeforeUnmount, ref, watchEffect } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import EditorPane from './components/EditorPane.vue'
 import PreviewPane from './components/PreviewPane.vue'
 import ToastMessage from './components/ToastMessage.vue'
@@ -33,10 +30,8 @@ import { useClipboard } from './composables/useClipboard.js'
 
 import './assets/styles/editor.css'
 
-const sampleArticle = await fetch('/2026-04-02-喝水护肤.md').then((response) => response.text())
-const sampleLines = sampleArticle.trim().split('\n')
-const title = ref(sampleLines[0].replace(/^#\s+/, ''))
-const content = ref(sampleLines.slice(2).join('\n'))
+const title = ref('')
+const content = ref('')
 
 const { templates, activeTemplateId, activeTemplate, setTemplate } = useTemplates()
 const { parsedHTML } = useMarkdown(content, activeTemplate)
@@ -54,6 +49,15 @@ watchEffect(() => {
 
 onBeforeUnmount(() => {
   templateStyleEl.remove()
+})
+
+onMounted(async () => {
+  const response = await fetch('/2026-04-02-喝水护肤.md')
+  const sampleArticle = await response.text()
+  const sampleLines = sampleArticle.trim().split('\n')
+
+  title.value = sampleLines[0]?.replace(/^#\s+/, '') || ''
+  content.value = sampleLines.slice(2).join('\n')
 })
 
 async function handleCopy(wxPostEl) {

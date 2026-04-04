@@ -1,7 +1,7 @@
 <template>
   <div class="wx-compiled-content" :class="templateClass">
     <article ref="wxPostRef" class="wx-post">
-      <div class="wx-content" v-html="renderedHTML"></div>
+      <div class="wx-content" v-html="renderedHtml"></div>
     </article>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import { ref } from 'vue'
 
 defineProps({
-  renderedHTML: { type: String, default: '' },
+  renderedHtml: { type: String, default: '' },
   templateClass: { type: String, default: 'tpl-magazine-a' },
 })
 

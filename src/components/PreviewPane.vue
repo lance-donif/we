@@ -16,11 +16,10 @@
       </div>
     </header>
 
-    <!-- 预览主体 -->
     <div class="preview-body">
       <WxRenderer
         ref="rendererRef"
-        :rendered-h-t-m-l="renderedHTML"
+        :rendered-html="renderedHtml"
         :template-class="templateClass"
       />
     </div>
@@ -32,7 +31,7 @@ import { ref, computed } from 'vue'
 import WxRenderer from './WxRenderer.vue'
 
 const props = defineProps({
-  renderedHTML: { type: String, default: '' },
+  renderedHtml: { type: String, default: '' },
   templateClass: { type: String, default: 'tpl-magazine-a' },
   template: { type: Object, required: true },
 })
