@@ -124,6 +124,65 @@ export function useClipboard() {
       }
     })
 
+    const replaceTagName = [
+      ['article', 'section'],
+      ['blockquote', 'section'],
+      ['figure', 'section'],
+      ['figcaption', 'p'],
+      ['h2', 'p'],
+      ['h3', 'p'],
+      ['h4', 'p'],
+      ['strong', 'span'],
+      ['em', 'span'],
+      ['code', 'span'],
+    ]
+
+    replaceTagName.forEach(([from, to]) => {
+      exportRoot.querySelectorAll(from).forEach((element) => {
+        const replacement = document.createElement(to)
+
+        Array.from(element.attributes).forEach((attr) => {
+          replacement.setAttribute(attr.name, attr.value)
+        })
+
+        while (element.firstChild) {
+          replacement.appendChild(element.firstChild)
+        }
+
+        element.parentNode?.replaceChild(replacement, element)
+      })
+    })
+
+    exportRoot.querySelectorAll('.wx-highlight').forEach((element) => {
+      if (element.tagName.toLowerCase() === 'section') return
+
+      const replacement = document.createElement('section')
+      Array.from(element.attributes).forEach((attr) => {
+        replacement.setAttribute(attr.name, attr.value)
+      })
+
+      while (element.firstChild) {
+        replacement.appendChild(element.firstChild)
+      }
+
+      element.parentNode?.replaceChild(replacement, element)
+    })
+
+    exportRoot.querySelectorAll('.wx-highlight-text').forEach((element) => {
+      if (element.tagName.toLowerCase() === 'p') return
+
+      const replacement = document.createElement('p')
+      Array.from(element.attributes).forEach((attr) => {
+        replacement.setAttribute(attr.name, attr.value)
+      })
+
+      while (element.firstChild) {
+        replacement.appendChild(element.firstChild)
+      }
+
+      element.parentNode?.replaceChild(replacement, element)
+    })
+
     const images = Array.from(exportRoot.querySelectorAll('img'))
     let failedImageCount = 0
 

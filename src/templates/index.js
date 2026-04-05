@@ -6,6 +6,10 @@ import { magazineTips } from './magazineTips.js'
 import { magazineXinjiang } from './magazineXinjiang.js'
 import { magazineChangsha } from './magazineChangsha.js'
 import { magazineMarket } from './magazineMarket.js'
+import { pureMist } from './pureMist.js'
+import { pureOat } from './pureOat.js'
+import { pureSage } from './pureSage.js'
+import { pureBlue } from './pureBlue.js'
 
 export const templates = [
   magazineA,
@@ -16,4 +20,8 @@ export const templates = [
   magazineXinjiang,
   magazineChangsha,
   magazineMarket,
+  pureMist,
+  pureOat,
+  pureSage,
+  pureBlue,
 ]

@@ -1,0 +1,35 @@
+.tpl-pure-oat .wx-post {
+  background: #f6f1e7;
+}
+
+.tpl-pure-oat .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #f6f1e7;
+  --wx-accent: #8c7454;
+  --wx-page-color: #e5d9c6;
+  --wx-h3-color: #4d3f2d;
+  --wx-card-bg: #efe5d7;
+}
+
+.tpl-pure-oat .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #fbf7ef;
+  --wx-accent: #7d684c;
+  --wx-page-color: #e7dcc9;
+  --wx-h3-color: #433727;
+  --wx-card-bg: #f3ebdf;
+}
+
+.tpl-pure-oat .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #f4ede2;
+  --wx-accent: #92785a;
+  --wx-page-color: #e1d3be;
+  --wx-h3-color: #503f2d;
+  --wx-card-bg: #ebe0d0;
+}
+
+.tpl-pure-oat .wx-section {
+  background-color: var(--wx-section-bg);
+}
+
+.tpl-pure-oat .wx-page {
+  color: var(--wx-page-color);
+}

@@ -9,6 +9,7 @@ export function useMarkdown(markdownRef, templateRef) {
     let inSection = false
     let sectionCount = 0
     let listItems = []
+    let olItems = []
     let quoteLines = []
 
     function flushCards() {
@@ -19,6 +20,20 @@ export function useMarkdown(markdownRef, templateRef) {
         })
         html += '</div>'
         listItems = []
+      }
+
+      if (olItems.length) {
+        html += '<div class="wx-ordered-list">'
+        olItems.forEach((item, index) => {
+          html += `
+            <div class="wx-ol-item">
+              <span class="wx-ol-number">${index + 1}</span>
+              <div class="wx-ol-content">${inlineFormat(item)}</div>
+            </div>
+          `
+        })
+        html += '</div>'
+        olItems = []
       }
 
       if (quoteLines.length) {
@@ -37,6 +52,23 @@ export function useMarkdown(markdownRef, templateRef) {
 
       if (trimmed === '') {
         flushCards()
+        continue
+      }
+      
+      if (line.startsWith('# ')) {
+        flushCards()
+        const content = line.slice(2).trim()
+        const [title, mainTitle] = content.split('|').map(s => s.trim())
+        if (mainTitle) {
+          html += `
+            <div class="wx-title-block">
+              <span class="wx-title">${inlineFormat(title)}</span>
+              <h1 class="wx-main-title">${inlineFormat(mainTitle)}</h1>
+            </div>
+          `
+        } else {
+          html += `<div class="wx-title-block"><h1 class="wx-main-title">${inlineFormat(title)}</h1></div>`
+        }
         continue
       }
 
@@ -85,8 +117,20 @@ export function useMarkdown(markdownRef, templateRef) {
         continue
       }
 
+      const olMatch = line.match(/^\d+\.\s+(.+)$/)
+      if (olMatch) {
+        olItems.push(olMatch[1])
+        continue
+      }
+
       if (line.startsWith('- ') || line.startsWith('* ')) {
         listItems.push(line.slice(2))
+        continue
+      }
+
+      if (trimmed === '---' || trimmed === '***') {
+        flushCards()
+        html += '<hr class="wx-hr" />'
         continue
       }
 
@@ -141,7 +185,7 @@ export function useMarkdown(markdownRef, templateRef) {
           i += 1
         }
 
-        html += `<div class="wx-media-grid columns-${images.length === 2 ? 2 : 3}">`
+        html += `<div class="wx-media-grid columns-${images.length === 1 ? 1 : images.length === 2 ? 2 : 3}">`
         images.slice(0, 3).forEach(([, alt, src]) => {
           const trimmedAlt = alt.trim()
           html += `
@@ -173,8 +217,8 @@ export function useMarkdown(markdownRef, templateRef) {
 
 function inlineFormat(text) {
   text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="wx-strong">$1</strong>')
-  text = text.replace(/\*(.+?)\*/g, '<em>$1</em>')
-  text = text.replace(/`(.+?)`/g, '<code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;font-size:14px;">$1</code>')
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:inherit;text-decoration:underline;">$1</a>')
+  text = text.replace(/\*(.+?)\*/g, '<em class="wx-em">$1</em>')
+  text = text.replace(/`(.+?)`/g, '<code class="wx-code">$1</code>')
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="wx-link">$1</a>')
   return text
 }

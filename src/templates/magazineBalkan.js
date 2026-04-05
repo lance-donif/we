@@ -7,10 +7,10 @@ export const magazineBalkan = createMagazineTemplate({
   className: 'tpl-magazine-balkan',
   pageStart: 0,
   sectionPalette: [
-    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#181a1b', cardBg: '#ececec' },
-    { bg: '#fffdfa', accent: '#fb6614', number: '#ffe9d0', h3: '#662b06', cardBg: '#fff5e7' },
-    { bg: '#fafffc', accent: '#07bc49', number: '#d0ffe2', h3: '#06662b', cardBg: '#e7fff1' },
-    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#181a1b', cardBg: '#ececec' },
+    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#333b3d', cardBg: '#ececec' },
+    { bg: '#fffdfa', accent: '#e65100', number: '#ffe9d0', h3: '#3e2723', cardBg: '#fff3e0' },
+    { bg: '#fafffc', accent: '#2e7d32', number: '#d0ffe2', h3: '#1b5e20', cardBg: '#e8f5e9' },
+    { bg: '#f5f5f5', accent: '#44494b', number: '#dcdddd', h3: '#333b3d', cardBg: '#ececec' },
   ],
   cssText: privateCssText,
 })

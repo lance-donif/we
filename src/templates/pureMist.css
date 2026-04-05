@@ -1,0 +1,35 @@
+.tpl-pure-mist .wx-post {
+  background: #f3f1ed;
+}
+
+.tpl-pure-mist .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #f3f1ed;
+  --wx-accent: #6f6860;
+  --wx-page-color: #d7d2ca;
+  --wx-h3-color: #2d2925;
+  --wx-card-bg: #ebe6df;
+}
+
+.tpl-pure-mist .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #efebe6;
+  --wx-accent: #7a7269;
+  --wx-page-color: #dbd5cd;
+  --wx-h3-color: #322e29;
+  --wx-card-bg: #e7e1d9;
+}
+
+.tpl-pure-mist .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #f7f5f2;
+  --wx-accent: #665f57;
+  --wx-page-color: #d9d4cc;
+  --wx-h3-color: #292521;
+  --wx-card-bg: #efebe4;
+}
+
+.tpl-pure-mist .wx-section {
+  background-color: var(--wx-section-bg);
+}
+
+.tpl-pure-mist .wx-page {
+  color: var(--wx-page-color);
+}
