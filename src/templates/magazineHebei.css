@@ -2,15 +2,15 @@
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.18)),
     repeating-linear-gradient(0deg, rgba(118, 110, 98, 0.018) 0 1px, rgba(255, 255, 255, 0) 1px 5px),
-    #f5f5f5;
+    rgba(0,0,0,0.03);
 }
 
 .tpl-magazine-hebei .wx-section:nth-of-type(4n + 1) {
-  --wx-section-bg: #f5f5f5;
+  --wx-section-bg: rgba(0,0,0,0.03);
   --wx-accent: #44494b;
-  --wx-page-color: #dcdddd;
+  --wx-page-color: #dbdad7;
   --wx-h3-color: #181a1b;
-  --wx-card-bg: #ececec;
+  --wx-card-bg: rgba(0,0,0,0.06);
 }
 
 .tpl-magazine-hebei .wx-section:nth-of-type(4n + 2) {

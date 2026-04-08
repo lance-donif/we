@@ -1,14 +1,14 @@
 .tpl-magazine-balkan .wx-post {
   --wx-noise-image: url("https://fe-static.xhscdn.com/formula-static/slytherinh5/public/img/noise.1ab1741.svg");
-  background: #f5f5f5;
+  background: rgba(0,0,0,0.03);
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 1) {
-  --wx-section-bg: #f5f5f5;
+  --wx-section-bg: rgba(0,0,0,0.03);
   --wx-accent: #44494b;
-  --wx-page-color: #dcdddd;
+  --wx-page-color: #dbdad7;
   --wx-h3-color: #181a1b;
-  --wx-card-bg: #ececec;
+  --wx-card-bg: rgba(0,0,0,0.06);
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 2) {
@@ -28,11 +28,11 @@
 }
 
 .tpl-magazine-balkan .wx-section:nth-of-type(4n + 4) {
-  --wx-section-bg: #f5f5f5;
+  --wx-section-bg: rgba(0,0,0,0.03);
   --wx-accent: #44494b;
-  --wx-page-color: #dcdddd;
+  --wx-page-color: #dbdad7;
   --wx-h3-color: #181a1b;
-  --wx-card-bg: #ececec;
+  --wx-card-bg: rgba(0,0,0,0.06);
 }
 
 .tpl-magazine-balkan .wx-section {

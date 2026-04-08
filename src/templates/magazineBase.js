@@ -1,9 +1,18 @@
 import sharedCssText from './magazineShared.css?raw'
 
-function blendColor(hex, whiteRatio) {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
+function blendColor(color, whiteRatio) {
+  if (!color) return color
+  if (color.startsWith('rgba')) {
+    const match = color.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([0-9.]+)\)/)
+    if (match) {
+      const f = 1 - whiteRatio
+      return `rgba(${match[1]}, ${match[2]}, ${match[3]}, ${+(parseFloat(match[4]) * f).toFixed(3)})`
+    }
+    return color
+  }
+  const r = parseInt(color.slice(1, 3), 16)
+  const g = parseInt(color.slice(3, 5), 16)
+  const b = parseInt(color.slice(5, 7), 16)
   const f = 1 - whiteRatio
   const rr = Math.round(r * f + 255 * whiteRatio)
   const gg = Math.round(g * f + 255 * whiteRatio)
@@ -19,7 +28,7 @@ export function createMagazineTemplate(template) {
       const isBalkan = template.id === 'tpl-magazine-balkan'
       const serifStack = "'Songti SC','STSong','SimSun','Times New Roman',serif"
       const sansStack = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif"
-      const rootBg = template.sectionPalette[0]?.bg || '#f5f5f5'
+      const rootBg = template.sectionPalette[0]?.bg || 'rgba(0,0,0,0.03)'
 
       clone.setAttribute(
         'style',
