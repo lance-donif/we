@@ -1,0 +1,332 @@
+/* ╔══════════════════════════════════════════╗
+   ║  轻奢 · 鎏金  LUXE GOLD                ║
+   ║  黑白为骨 · 金色为魂 · 留白即奢侈       ║
+   ╚══════════════════════════════════════════╝ */
+
+/* ── 全局：纯白画布，去掉所有杂志质感 ── */
+.tpl-luxe-gold .wx-compiled-content {
+  background: #ffffff;
+}
+
+.tpl-luxe-gold .wx-post {
+  background: #ffffff;
+}
+
+/* ── 色板：统一纯白 ── */
+.tpl-luxe-gold .wx-section {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #C4A35A;
+  --wx-page-color: #C4A35A;
+  --wx-h3-color: #1a1a1a;
+  --wx-card-bg: #f6f6f6;
+}
+
+.tpl-luxe-gold .wx-section {
+  background-color: var(--wx-section-bg);
+  background-image: none;
+  padding: 48px 28px 36px;
+}
+
+/* ═══════════════════════════════════════════
+   标题区 — 黑字为体，金线为饰
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-title-block {
+  padding: 36px 28px 24px;
+  text-align: center;
+}
+
+.tpl-luxe-gold .wx-title {
+  display: inline-block;
+  color: #C4A35A;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid #C4A35A;
+  padding: 4px 14px;
+  margin-bottom: 14px;
+}
+
+.tpl-luxe-gold .wx-main-title {
+  font-size: 28px;
+  line-height: 1.35;
+  color: #1a1a1a;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   页码 — 金色大字，居中显示
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-page {
+  color: #C4A35A;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-align: center;
+  margin-bottom: 24px;
+  opacity: 1;
+}
+
+/* 页码前后加装饰线 */
+.tpl-luxe-gold .wx-page::before,
+.tpl-luxe-gold .wx-page::after {
+  content: '——';
+  color: #ddd;
+  font-weight: 300;
+  letter-spacing: -0.1em;
+  margin: 0 8px;
+}
+
+/* ═══════════════════════════════════════════
+   正文 — 纯黑白，干净利落
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-p {
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: 0.5px;
+  color: #2a2a2a;
+}
+
+/* ── h2：黑色大标题 + 金色小方块装饰 ── */
+.tpl-luxe-gold .wx-h2 {
+  font-size: 22px;
+  line-height: 1.4;
+  color: #1a1a1a;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* 金色居中短线 */
+.tpl-luxe-gold .wx-h2::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #C4A35A;
+  margin: 8px auto 0;
+}
+
+/* ── h3：黑色副标题 ── */
+.tpl-luxe-gold .wx-h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.tpl-luxe-gold .wx-h3-mood {
+  color: #999;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+
+/* ═══════════════════════════════════════════
+   行内元素 — 金色仅在强调时出现
+   ═══════════════════════════════════════════ */
+
+/* 加粗：金色文字，无底色 */
+.tpl-luxe-gold .wx-strong {
+  font-weight: 700;
+  color: #C4A35A;
+  background: none;
+  border-bottom: none;
+  padding: 0;
+}
+
+.tpl-luxe-gold .wx-em {
+  color: #666;
+  font-weight: 400;
+}
+
+.tpl-luxe-gold .wx-code {
+  background: #f5f5f5;
+  color: #333;
+  border-bottom: none;
+  border-radius: 2px;
+}
+
+.tpl-luxe-gold .wx-link {
+  color: #C4A35A;
+  border-bottom: 1px solid rgba(196, 163, 90, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   分割线 — 极简金色细线
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-hr {
+  width: 40px;
+  height: 1px;
+  background: #C4A35A;
+  margin: 40px auto;
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════
+   卡片 — 白底 + 金色顶线（非左线）
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-callout {
+  border-radius: 0;
+  border: none;
+  border-top: 2px solid #C4A35A;
+  background: #fafafa;
+  box-shadow: none;
+  padding: 16px 14px;
+}
+
+.tpl-luxe-gold .wx-callout-item {
+  color: #2a2a2a;
+}
+
+/* ── 高亮块：左侧金色竖条 ── */
+.tpl-luxe-gold .wx-highlight {
+  border-radius: 0;
+  border: none;
+  border-left: 3px solid #C4A35A;
+  background: #fafafa;
+  box-shadow: none;
+}
+
+.tpl-luxe-gold .wx-highlight-icon {
+  display: none;
+}
+
+.tpl-luxe-gold .wx-highlight-text {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* ── 引用块：纯文字 + 金色引号 ── */
+.tpl-luxe-gold .wx-note {
+  border-radius: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 12px 0 12px 24px;
+  position: relative;
+}
+
+.tpl-luxe-gold .wx-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, #C4A35A, transparent);
+}
+
+.tpl-luxe-gold .wx-note-line {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ── 方案卡：白底 + 细灰边 + 金色标签 ── */
+.tpl-luxe-gold .wx-scheme-card {
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-shadow: none;
+}
+
+.tpl-luxe-gold .wx-scheme-label {
+  border-radius: 0;
+  background: #1a1a1a;
+  color: #C4A35A;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+}
+
+.tpl-luxe-gold .wx-scheme-title {
+  color: #1a1a1a;
+}
+
+.tpl-luxe-gold .wx-scheme-meta {
+  color: #999;
+}
+
+.tpl-luxe-gold .wx-scheme-desc {
+  color: #444;
+}
+
+/* ═══════════════════════════════════════════
+   有序列表 — 金色数字，无背景
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-ol-number {
+  background: none;
+  color: #C4A35A;
+  font-size: 16px;
+  font-weight: 800;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1.5;
+}
+
+.tpl-luxe-gold .wx-ol-content {
+  color: #2a2a2a;
+}
+
+/* ═══════════════════════════════════════════
+   特写块
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-feature-mark {
+  border-radius: 0;
+  background: #C4A35A;
+  box-shadow: none;
+  width: 6px;
+  height: 6px;
+}
+
+.tpl-luxe-gold .wx-feature-kicker {
+  color: #999;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+.tpl-luxe-gold .wx-feature-title {
+  color: #1a1a1a;
+}
+
+/* ═══════════════════════════════════════════
+   图片 — 无边框，干净
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-media-frame {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #f5f5f5;
+}
+
+.tpl-luxe-gold .wx-img {
+  border-radius: 0;
+}
+
+.tpl-luxe-gold .wx-media-caption {
+  color: #999;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════
+   元信息
+   ═══════════════════════════════════════════ */
+
+.tpl-luxe-gold .wx-meta { color: #bbb; }
+.tpl-luxe-gold .wx-author { color: #999; }
+.tpl-luxe-gold .wx-date { color: #ccc; }

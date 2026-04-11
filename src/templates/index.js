@@ -15,6 +15,7 @@ import { canvaFresh } from './canvaFresh.js'
 import { canvaArtsy } from './canvaArtsy.js'
 import { blankMinimal } from './blankMinimal.js'
 import { pingfangLight } from './pingfangLight.js'
+import { luxeGold } from './luxeGold.js'
 
 export const templates = [
   magazineA,
@@ -34,4 +35,5 @@ export const templates = [
   canvaArtsy,
   blankMinimal,
   pingfangLight,
+  luxeGold,
 ]
