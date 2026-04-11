@@ -1,0 +1,351 @@
+/* 苹方 · 轻盈 — iOS 苹方细体风格 */
+/* 字号15px · 字间距1px · 行间距2 · 边距15px · 颜色#3f3f3f */
+/* 标题数字32px加粗 · 文字18px加粗 */
+/* 元素：下划线、括号、三角形符号 */
+
+.tpl-pingfang-light .wx-compiled-content {
+  --font-sans: 'PingFang SC', -apple-system, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  --font-serif: 'PingFang SC', -apple-system, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  background: #ffffff;
+}
+
+.tpl-pingfang-light .wx-post {
+  background: #ffffff;
+}
+
+/* — 色板轮换 — */
+.tpl-pingfang-light .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #3f3f3f;
+  --wx-page-color: #d0d0d0;
+  --wx-h3-color: #2a2a2a;
+  --wx-card-bg: #f5f5f5;
+}
+
+.tpl-pingfang-light .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #fafafa;
+  --wx-accent: #555555;
+  --wx-page-color: #c8c8c8;
+  --wx-h3-color: #2d2d2d;
+  --wx-card-bg: #f0f0f0;
+}
+
+.tpl-pingfang-light .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #3f3f3f;
+  --wx-page-color: #d0d0d0;
+  --wx-h3-color: #2a2a2a;
+  --wx-card-bg: #f5f5f5;
+}
+
+.tpl-pingfang-light .wx-section {
+  background-color: var(--wx-section-bg);
+  background-image: none;
+  padding: 18px 8px 10px;
+}
+
+/* — 页码：32px 加粗数字 — */
+.tpl-pingfang-light .wx-page {
+  color: var(--wx-page-color);
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+/* — 标题块 — */
+.tpl-pingfang-light .wx-title-block {
+  padding: 10px 8px 7px;
+}
+
+/* — 间距减半 — */
+.tpl-pingfang-light .wx-p + .wx-p { margin-top: 9px; }
+.tpl-pingfang-light .wx-p + .wx-h3 { margin-top: 11px; }
+.tpl-pingfang-light .wx-h2 { margin-bottom: 5px; }
+.tpl-pingfang-light .wx-h3 { margin-bottom: 8px; }
+.tpl-pingfang-light .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+.tpl-pingfang-light .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) + :is(.wx-p, .wx-h3, .wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+
+.tpl-pingfang-light .wx-main-title {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #2a2a2a;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-title {
+  font-family: var(--font-sans);
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* — 正文：15px / 行高2 / 字间距1px / #3f3f3f — */
+.tpl-pingfang-light .wx-p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: #3f3f3f;
+  font-weight: 300;
+}
+
+/* — 标题文字 18px 加粗 — */
+.tpl-pingfang-light .wx-h2 {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #2a2a2a;
+  letter-spacing: 1px;
+}
+
+/* — 副标题 — */
+.tpl-pingfang-light .wx-h3 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #2a2a2a;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-h3-mood {
+  font-weight: 400;
+  color: #999999;
+  letter-spacing: 2px;
+}
+
+/* — 分割线：极细 — */
+.tpl-pingfang-light .wx-hr {
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 16px auto;
+}
+
+/* — 强调文字：下划线装饰 — */
+.tpl-pingfang-light .wx-strong {
+  font-weight: 700;
+  color: #2a2a2a;
+  background: none;
+  border-bottom: 1px solid #3f3f3f;
+  padding: 0;
+}
+
+/* — 斜体 — */
+.tpl-pingfang-light .wx-em {
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: #888888;
+  font-weight: 300;
+}
+
+/* — 代码 — */
+.tpl-pingfang-light .wx-code {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  background: #f5f5f5;
+  border-bottom: none;
+  border-radius: 2px;
+  color: #555555;
+}
+
+/* — 引用块：括号「」装饰 — */
+.tpl-pingfang-light .wx-note {
+  border-radius: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 16px 20px;
+  position: relative;
+}
+
+.tpl-pingfang-light .wx-note::before {
+  content: '「';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  font-size: 24px;
+  line-height: 1;
+  color: #d0d0d0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.tpl-pingfang-light .wx-note::after {
+  content: '」';
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  font-size: 24px;
+  line-height: 1;
+  color: #d0d0d0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.tpl-pingfang-light .wx-note-line {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.8;
+  color: #888888;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* — 卡片：极简 — */
+.tpl-pingfang-light .wx-callout {
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  background: none;
+  box-shadow: none;
+  padding: 16px 0;
+}
+
+.tpl-pingfang-light .wx-callout-item {
+  font-family: var(--font-sans);
+  color: #3f3f3f;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-callout-item.lead {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* — 高亮块 — */
+.tpl-pingfang-light .wx-highlight {
+  border-radius: 0;
+  background: #f8f8f8;
+  box-shadow: none;
+  border: none;
+  padding: 16px;
+}
+
+.tpl-pingfang-light .wx-highlight-icon {
+  display: none;
+}
+
+.tpl-pingfang-light .wx-highlight-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #3f3f3f;
+  letter-spacing: 1px;
+}
+
+/* — 有序列表：三角形 ▶ 替代圆形数字 — */
+.tpl-pingfang-light .wx-ol-number {
+  background: none;
+  color: #3f3f3f;
+  font-size: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 5px;
+}
+
+.tpl-pingfang-light .wx-ol-number::before {
+  content: '▸';
+  font-size: 14px;
+  color: #999999;
+}
+
+.tpl-pingfang-light .wx-ol-content {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 2;
+  color: #3f3f3f;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* — 方案卡 — */
+.tpl-pingfang-light .wx-scheme-card {
+  border-radius: 0;
+  border: 1px solid #e5e5e5;
+  box-shadow: none;
+}
+
+.tpl-pingfang-light .wx-scheme-label {
+  border-radius: 0;
+  background: #f5f5f5;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-scheme-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-scheme-meta {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: #999999;
+}
+
+.tpl-pingfang-light .wx-scheme-desc {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #3f3f3f;
+}
+
+/* — 特写 — */
+.tpl-pingfang-light .wx-feature-kicker {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: #999999;
+  letter-spacing: 2px;
+}
+
+.tpl-pingfang-light .wx-feature-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tpl-pingfang-light .wx-feature-mark {
+  border-radius: 0;
+  background: #e5e5e5;
+  box-shadow: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* — 图片 — */
+.tpl-pingfang-light .wx-media-frame {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e5e5e5;
+}
+
+.tpl-pingfang-light .wx-img {
+  border-radius: 0;
+}
+
+.tpl-pingfang-light .wx-media-caption {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: #999999;
+  letter-spacing: 1px;
+}
+
+/* — 链接 — */
+.tpl-pingfang-light .wx-link {
+  color: #3f3f3f;
+  border-bottom: 1px solid #c0c0c0;
+}

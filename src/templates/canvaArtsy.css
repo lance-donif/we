@@ -1,0 +1,141 @@
+/* Canva · 文艺 — 文艺拼贴风 */
+
+.tpl-canva-artsy .wx-compiled-content {
+  background:
+    linear-gradient(180deg, #f9f5f0 0%, #f4f0ea 50%, #faf7f3 100%);
+}
+
+.tpl-canva-artsy .wx-post {
+  background: #f9f5f0;
+}
+
+/* — 色板轮换 — */
+.tpl-canva-artsy .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #f9f5f0;
+  --wx-accent: #8B6F5A;
+  --wx-page-color: #ddd0c3;
+  --wx-h3-color: #4a3829;
+  --wx-card-bg: #f0e9e0;
+}
+
+.tpl-canva-artsy .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #f4f0ea;
+  --wx-accent: #6B7F5F;
+  --wx-page-color: #c5d4bc;
+  --wx-h3-color: #3a4d32;
+  --wx-card-bg: #e8e3d8;
+}
+
+.tpl-canva-artsy .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #faf7f3;
+  --wx-accent: #9c7a6a;
+  --wx-page-color: #ddd0c3;
+  --wx-h3-color: #5a4234;
+  --wx-card-bg: #f2ece4;
+}
+
+.tpl-canva-artsy .wx-section {
+  background-color: var(--wx-section-bg);
+  background-image: none;
+  padding: 20px 12px 14px;
+}
+
+.tpl-canva-artsy .wx-page {
+  color: var(--wx-page-color);
+  font-size: 32px;
+  font-style: italic;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.tpl-canva-artsy .wx-title-block {
+  padding: 12px 12px 8px;
+}
+
+/* — 间距减半 — */
+.tpl-canva-artsy .wx-p + .wx-p { margin-top: 9px; }
+.tpl-canva-artsy .wx-p + .wx-h3 { margin-top: 11px; }
+.tpl-canva-artsy .wx-h2 { margin-bottom: 5px; }
+.tpl-canva-artsy .wx-h3 { margin-bottom: 8px; }
+.tpl-canva-artsy .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+.tpl-canva-artsy .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) + :is(.wx-p, .wx-h3, .wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+
+/* — 正文 15px / 行高 1.82 — */
+.tpl-canva-artsy .wx-p {
+  font-size: 15px;
+  line-height: 1.82;
+  letter-spacing: 0.5px;
+  color: #3d3529;
+}
+
+/* — 标题 — */
+.tpl-canva-artsy .wx-h2 {
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.tpl-canva-artsy .wx-h3 {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* — 分割线：居中短划 — */
+.tpl-canva-artsy .wx-hr {
+  width: 30%;
+  height: 2px;
+  background: var(--wx-accent);
+  opacity: 0.35;
+  border-radius: 1px;
+  margin: 20px auto;
+}
+
+/* — 卡片：带左边框装饰 — */
+.tpl-canva-artsy .wx-callout {
+  border-radius: 4px;
+  border-left: 3px solid var(--wx-accent);
+  box-shadow: none;
+  background: var(--wx-card-bg);
+}
+
+.tpl-canva-artsy .wx-highlight {
+  border-radius: 4px;
+  border-left: 3px solid var(--wx-accent);
+}
+
+.tpl-canva-artsy .wx-note {
+  border-radius: 4px;
+  border: none;
+  border-left: 2px dashed var(--wx-accent);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tpl-canva-artsy .wx-scheme-card {
+  border-radius: 8px;
+  border: 1px solid rgba(139, 111, 90, 0.1);
+}
+
+/* — 强调文字：厚重下划线 — */
+.tpl-canva-artsy .wx-strong {
+  background: none;
+  border-bottom: 3px solid var(--wx-accent);
+  padding: 0 1px;
+  font-weight: 800;
+}
+
+/* — 序号：方形复古 — */
+.tpl-canva-artsy .wx-ol-number {
+  border-radius: 3px;
+  font-weight: 800;
+}
+
+/* — 特写标记：方形 — */
+.tpl-canva-artsy .wx-feature-mark {
+  border-radius: 4px;
+}
+
+/* — 图片框：小圆角，带边框 — */
+.tpl-canva-artsy .wx-media-frame {
+  border-radius: 6px;
+  border: 1px solid rgba(139, 111, 90, 0.1);
+}

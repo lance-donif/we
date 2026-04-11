@@ -1,0 +1,126 @@
+/* Canva · 商务 — 极简商务风 */
+
+.tpl-canva-biz .wx-compiled-content {
+  background:
+    linear-gradient(180deg, #f8f9fa 0%, #f0f2f5 100%);
+}
+
+.tpl-canva-biz .wx-post {
+  background: #f8f9fa;
+}
+
+/* — 色板轮换 — */
+.tpl-canva-biz .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #f8f9fa;
+  --wx-accent: #2C3E50;
+  --wx-page-color: #d5dfe7;
+  --wx-h3-color: #1a252f;
+  --wx-card-bg: #eef2f5;
+}
+
+.tpl-canva-biz .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #34495E;
+  --wx-page-color: #c8d6e0;
+  --wx-h3-color: #1c2833;
+  --wx-card-bg: #f0f4f7;
+}
+
+.tpl-canva-biz .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #f5f6f8;
+  --wx-accent: #2980B9;
+  --wx-page-color: #bdd8eb;
+  --wx-h3-color: #1a3a5c;
+  --wx-card-bg: #e8f0f8;
+}
+
+.tpl-canva-biz .wx-section {
+  background-color: var(--wx-section-bg);
+  background-image: none;
+  padding: 20px 14px 14px;
+}
+
+.tpl-canva-biz .wx-page {
+  color: var(--wx-page-color);
+  font-size: 26px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.tpl-canva-biz .wx-title-block {
+  padding: 12px 14px 8px;
+}
+
+/* — 间距减半 — */
+.tpl-canva-biz .wx-p + .wx-p { margin-top: 9px; }
+.tpl-canva-biz .wx-p + .wx-h3 { margin-top: 11px; }
+.tpl-canva-biz .wx-h2 { margin-bottom: 5px; }
+.tpl-canva-biz .wx-h3 { margin-bottom: 8px; }
+.tpl-canva-biz .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+.tpl-canva-biz .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) + :is(.wx-p, .wx-h3, .wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+
+/* — 正文 15px / 行高 1.75 — */
+.tpl-canva-biz .wx-p {
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  color: #333333;
+}
+
+/* — 标题紧凑 — */
+.tpl-canva-biz .wx-h2 {
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.tpl-canva-biz .wx-h3 {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* — 更精致的分割线 — */
+.tpl-canva-biz .wx-hr {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8d6e0 30%, #c8d6e0 70%, transparent);
+  margin: 20px auto;
+}
+
+/* — 卡片去圆角感，更商务 — */
+.tpl-canva-biz .wx-callout {
+  border-radius: 10px;
+  border: 1px solid rgba(44, 62, 80, 0.08);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+}
+
+.tpl-canva-biz .wx-highlight {
+  border-radius: 10px;
+  border: 1px solid rgba(44, 62, 80, 0.08);
+}
+
+.tpl-canva-biz .wx-note {
+  border-radius: 10px;
+  border-left: 3px solid var(--wx-accent);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  background: rgba(44, 62, 80, 0.02);
+}
+
+.tpl-canva-biz .wx-scheme-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.06);
+}
+
+/* — 强调文字：干净下划线 — */
+.tpl-canva-biz .wx-strong {
+  background: none;
+  border-bottom: 2px solid var(--wx-accent);
+  padding: 0 1px;
+}
+
+/* — 有序列表：方形序号 — */
+.tpl-canva-biz .wx-ol-number {
+  border-radius: 4px;
+}

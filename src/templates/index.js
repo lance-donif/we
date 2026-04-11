@@ -10,6 +10,11 @@ import { pureMist } from './pureMist.js'
 import { pureOat } from './pureOat.js'
 import { pureSage } from './pureSage.js'
 import { pureBlue } from './pureBlue.js'
+import { canvaBiz } from './canvaBiz.js'
+import { canvaFresh } from './canvaFresh.js'
+import { canvaArtsy } from './canvaArtsy.js'
+import { blankMinimal } from './blankMinimal.js'
+import { pingfangLight } from './pingfangLight.js'
 
 export const templates = [
   magazineA,
@@ -24,4 +29,9 @@ export const templates = [
   pureOat,
   pureSage,
   pureBlue,
+  canvaBiz,
+  canvaFresh,
+  canvaArtsy,
+  blankMinimal,
+  pingfangLight,
 ]

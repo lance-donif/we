@@ -1,0 +1,181 @@
+/* 空白 · 极简 — 3色法则纯净排版 */
+/* 正文深灰 #333333 · 辅助灰 #595959 · 强调暖红 #A63737 · 商务蓝 #2C3E50 */
+/* 弃用纯黑 #000，高级感在于灰度的微妙 */
+
+.tpl-blank-minimal .wx-compiled-content {
+  background: #ffffff;
+}
+
+.tpl-blank-minimal .wx-post {
+  background: #ffffff;
+}
+
+/* — 色板轮换 — */
+.tpl-blank-minimal .wx-section:nth-of-type(3n + 1) {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #A63737;
+  --wx-page-color: #e8d0d0;
+  --wx-h3-color: #333333;
+  --wx-card-bg: #f7f3f3;
+}
+
+.tpl-blank-minimal .wx-section:nth-of-type(3n + 2) {
+  --wx-section-bg: #fafafa;
+  --wx-accent: #2C3E50;
+  --wx-page-color: #d5dfe7;
+  --wx-h3-color: #333333;
+  --wx-card-bg: #f0f2f5;
+}
+
+.tpl-blank-minimal .wx-section:nth-of-type(3n + 3) {
+  --wx-section-bg: #ffffff;
+  --wx-accent: #595959;
+  --wx-page-color: #d9d9d9;
+  --wx-h3-color: #333333;
+  --wx-card-bg: #f5f5f5;
+}
+
+.tpl-blank-minimal .wx-section {
+  background-color: var(--wx-section-bg);
+  background-image: none;
+  padding: 16px 12px 12px;
+}
+
+.tpl-blank-minimal .wx-page {
+  color: var(--wx-page-color);
+  font-size: 24px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+/* — 标题艺术：块面感，力求1行 — */
+.tpl-blank-minimal .wx-title-block {
+  padding: 10px 12px 7px;
+}
+
+/* — 间距减半 — */
+.tpl-blank-minimal .wx-p + .wx-p { margin-top: 9px; }
+.tpl-blank-minimal .wx-p + .wx-h3 { margin-top: 11px; }
+.tpl-blank-minimal .wx-h2 { margin-bottom: 5px; }
+.tpl-blank-minimal .wx-h3 { margin-bottom: 8px; }
+.tpl-blank-minimal .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+.tpl-blank-minimal .wx-section > :is(.wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) + :is(.wx-p, .wx-h3, .wx-feature, .wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-media-grid) { margin-top: 10px; }
+
+.tpl-blank-minimal .wx-main-title {
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #2C3E50;
+  font-weight: 800;
+}
+
+.tpl-blank-minimal .wx-title {
+  color: #595959;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+/* — 正文 15px / 行高 1.75 — */
+.tpl-blank-minimal .wx-p {
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  color: #333333;
+}
+
+/* — 次级标题 17px — */
+.tpl-blank-minimal .wx-h2 {
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--wx-accent);
+  letter-spacing: -0.01em;
+}
+
+.tpl-blank-minimal .wx-h3 {
+  font-size: 17px;
+  line-height: 1.45;
+  color: #333333;
+}
+
+.tpl-blank-minimal .wx-h3-mood {
+  color: #595959;
+}
+
+/* — 分割线 — */
+.tpl-blank-minimal .wx-hr {
+  width: 100%;
+  height: 1px;
+  background: #e8e8e8;
+  margin: 20px auto;
+}
+
+/* — 极简卡片：无圆角，微边框 — */
+.tpl-blank-minimal .wx-callout {
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  background: var(--wx-card-bg);
+  box-shadow: none;
+}
+
+.tpl-blank-minimal .wx-highlight {
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  box-shadow: none;
+}
+
+.tpl-blank-minimal .wx-note {
+  border-radius: 0;
+  border: none;
+  border-left: 2px solid #A63737;
+  background: #fafafa;
+  box-shadow: none;
+}
+
+.tpl-blank-minimal .wx-scheme-card {
+  border-radius: 2px;
+  border: 1px solid #e8e8e8;
+  box-shadow: none;
+}
+
+/* — 强调文字：暖红色 — */
+.tpl-blank-minimal .wx-strong {
+  color: #A63737;
+  background: none;
+  border-bottom: 1px solid #A63737;
+  padding: 0;
+}
+
+/* — 斜体：辅助灰 — */
+.tpl-blank-minimal .wx-em {
+  color: #595959;
+}
+
+/* — 序号：极简方块 — */
+.tpl-blank-minimal .wx-ol-number {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+/* — 特写标记 — */
+.tpl-blank-minimal .wx-feature-mark {
+  border-radius: 2px;
+  box-shadow: none;
+  background: var(--wx-accent);
+}
+
+/* — 图片：无圆角 — */
+.tpl-blank-minimal .wx-media-frame {
+  border-radius: 2px;
+  box-shadow: none;
+  border: 1px solid #e8e8e8;
+}
+
+.tpl-blank-minimal .wx-img {
+  border-radius: 0;
+}
+
+/* — scheme label — */
+.tpl-blank-minimal .wx-scheme-label {
+  border-radius: 2px;
+  background: var(--wx-card-bg);
+}
