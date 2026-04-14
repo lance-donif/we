@@ -379,6 +379,11 @@ export function createMagazineTemplate(template) {
         })
       })
 
+      /* 模板后处理钩子 — 允许模板覆盖基础内联样式 */
+      if (template.copyPostProcess) {
+        template.copyPostProcess(clone)
+      }
+
       return clone
     },
   }
