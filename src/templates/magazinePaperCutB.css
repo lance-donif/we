@@ -1,0 +1,102 @@
+/* True 3D Paper-Cut Art: Ocean Art */
+.tpl-papercut-ocean .wx-post {
+  background-color: #f1f9ff;
+  background-image: 
+    linear-gradient(rgba(135, 206, 235, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(135, 206, 235, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  min-height: 100vh;
+}
+
+.tpl-papercut-ocean .wx-section {
+  position: relative;
+  border-radius: 40px 70px 50px 60px;
+  border: 8px solid #ffffff;
+  background-color: var(--wx-bg);
+  box-shadow: 
+    0 15px 40px rgba(61, 174, 233, 0.15),
+    0 5px 12px rgba(0, 0, 0, 0.04);
+  margin: 40px 24px;
+  padding: 50px 24px;
+}
+
+.tpl-papercut-ocean .wx-page {
+  display: none;
+}
+
+/* Character Sticker (Ocean Friend) */
+.tpl-papercut-ocean .wx-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 40% 60% 50% 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background-image: 
+    radial-gradient(circle at 20px 20px, #333 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40px 20px, #333 1.5px, transparent 1.5px),
+    radial-gradient(circle at 12px 30px, #add8e6 5px, transparent 5px),
+    radial-gradient(circle at 48px 30px, #add8e6 5px, transparent 5px);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.tpl-papercut-ocean .wx-h2 {
+  display: inline-block;
+  background-color: #fff;
+  color: var(--wx-accent);
+  padding: 10px 30px;
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 99px;
+  box-shadow: 0 4px 15px rgba(61, 174, 233, 0.12);
+  margin-bottom: 30px;
+  border: 4px solid #fff;
+}
+
+.tpl-papercut-ocean .wx-p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.tpl-papercut-ocean .wx-callout,
+.tpl-papercut-ocean .wx-note,
+.tpl-papercut-ocean .wx-highlight,
+.tpl-papercut-ocean .wx-scheme-card {
+  border: 8px solid #ffffff !important;
+  border-radius: 35px !important;
+  background-color: var(--wx-card-bg) !important;
+  box-shadow: 0 20px 45px rgba(61, 174, 233, 0.25) !important;
+  padding: 30px !important;
+  margin: 40px 0 !important;
+}
+
+.tpl-papercut-ocean .wx-media-frame {
+  border: 10px solid #ffffff !important;
+  border-radius: 30px !important;
+  box-shadow: 12px 12px 30px rgba(0,0,0,0.06) !important;
+  background-color: #fff;
+  transform: rotate(1.5deg);
+}
+
+.tpl-papercut-ocean .wx-section:nth-of-type(3n + 1) {
+  --wx-bg: #e1f5fe;
+  --wx-accent: #3daee9;
+  --wx-card-bg: #f8fdff;
+}
+.tpl-papercut-ocean .wx-section:nth-of-type(3n + 2) {
+  --wx-bg: #e0fbf6;
+  --wx-accent: #26c6da;
+  --wx-card-bg: #f8fdff;
+}
+.tpl-papercut-ocean .wx-section:nth-of-type(3n + 3) {
+  --wx-bg: #ecefff;
+  --wx-accent: #5c6bc0;
+  --wx-card-bg: #fdfdff;
+}

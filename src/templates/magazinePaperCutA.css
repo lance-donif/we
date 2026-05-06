@@ -1,0 +1,107 @@
+/* True 3D Paper-Cut Art: Sweet Art */
+.tpl-papercut-sweet .wx-post {
+  background-color: #fdf5f7;
+  background-image: 
+    radial-gradient(#ffd5df 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 30px 30px;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.tpl-papercut-sweet .wx-section {
+  position: relative;
+  /* Blobby organic shape */
+  border-radius: 60px 40px 70px 50px;
+  border: 8px solid #ffffff;
+  background-color: var(--wx-bg);
+  box-shadow: 
+    0 15px 40px rgba(255, 182, 193, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.05);
+  margin: 40px 24px;
+  padding: 50px 24px;
+}
+
+.tpl-papercut-sweet .wx-page {
+  display: none;
+}
+
+/* Character Sticker (CSS Character) */
+.tpl-papercut-sweet .wx-section::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50% 50% 45% 45%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background-image: 
+    radial-gradient(circle at 15px 18px, #333 1.5px, transparent 1.5px),
+    radial-gradient(circle at 35px 18px, #333 1.5px, transparent 1.5px),
+    radial-gradient(circle at 10px 28px, #ffb6c1 4px, transparent 4px),
+    radial-gradient(circle at 40px 28px, #ffb6c1 4px, transparent 4px);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.tpl-papercut-sweet .wx-h2 {
+  display: inline-block;
+  background-color: #fff;
+  color: var(--wx-accent);
+  padding: 10px 30px;
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 99px;
+  box-shadow: 0 6px 15px rgba(255, 133, 161, 0.15);
+  margin-bottom: 30px;
+  border: 4px solid #fff;
+  letter-spacing: 0.05em;
+}
+
+.tpl-papercut-sweet .wx-p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+/* 3D Paper Cards */
+.tpl-papercut-sweet .wx-callout,
+.tpl-papercut-sweet .wx-note,
+.tpl-papercut-sweet .wx-highlight,
+.tpl-papercut-sweet .wx-scheme-card {
+  border: 8px solid #ffffff !important;
+  border-radius: 40px !important;
+  background-color: var(--wx-card-bg) !important;
+  box-shadow: 0 20px 45px rgba(255, 182, 193, 0.3) !important;
+  padding: 30px !important;
+  margin: 40px 0 !important;
+  position: relative;
+}
+
+.tpl-papercut-sweet .wx-media-frame {
+  border: 10px solid #ffffff !important;
+  border-radius: 20px !important;
+  box-shadow: 12px 12px 30px rgba(0,0,0,0.08) !important;
+  background-color: #fff;
+  transform: rotate(-1deg);
+}
+
+.tpl-papercut-sweet .wx-section:nth-of-type(3n + 1) {
+  --wx-bg: #fff0f3;
+  --wx-accent: #ff85a1;
+  --wx-card-bg: #fffafb;
+}
+.tpl-papercut-sweet .wx-section:nth-of-type(3n + 2) {
+  --wx-bg: #f5f0ff;
+  --wx-accent: #a388ee;
+  --wx-card-bg: #fbfaff;
+}
+.tpl-papercut-sweet .wx-section:nth-of-type(3n + 3) {
+  --wx-bg: #fff5eb;
+  --wx-accent: #ff9e7d;
+  --wx-card-bg: #fffbf9;
+}

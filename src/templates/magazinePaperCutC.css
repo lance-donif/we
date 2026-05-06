@@ -1,0 +1,105 @@
+/* True 3D Paper-Cut Art: Nature Art */
+.tpl-papercut-meadow .wx-post {
+  background-color: #fafdca11;
+  background-image: 
+    radial-gradient(#d5e8d4 1.5px, transparent 1.5px),
+    radial-gradient(#d5e8d4 1.5px, transparent 1.5px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  min-height: 100vh;
+}
+
+.tpl-papercut-meadow .wx-section {
+  position: relative;
+  /* Organic, wavy cutout shape */
+  border-radius: 80% 20% 75% 25% / 25% 75% 20% 80%;
+  border: 8px solid #ffffff;
+  background-color: var(--wx-bg);
+  box-shadow: 
+    0 15px 40px rgba(102, 187, 106, 0.15),
+    0 5px 12px rgba(0, 0, 0, 0.04);
+  margin: 40px 24px;
+  padding: 60px 24px;
+}
+
+.tpl-papercut-meadow .wx-page {
+  display: none;
+}
+
+/* Character Sticker (Meadow Helper) */
+.tpl-papercut-meadow .wx-section::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 60% 40% 55% 45%;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background-image: 
+    radial-gradient(circle at 25px 22px, #444 2px, transparent 2px),
+    radial-gradient(circle at 45px 22px, #444 2px, transparent 2px),
+    radial-gradient(circle at 18px 32px, #ffd1dc 6px, transparent 6px),
+    radial-gradient(circle at 52px 32px, #ffd1dc 6px, transparent 6px);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.tpl-papercut-meadow .wx-h2 {
+  display: inline-block;
+  background-color: #fff;
+  color: var(--wx-accent);
+  padding: 12px 36px;
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(102, 187, 106, 0.15);
+  margin-bottom: 30px;
+  border: 4px solid #fff;
+  transform: rotate(-2deg);
+}
+
+.tpl-papercut-meadow .wx-p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.tpl-papercut-meadow .wx-callout,
+.tpl-papercut-meadow .wx-note,
+.tpl-papercut-meadow .wx-highlight,
+.tpl-papercut-meadow .wx-scheme-card {
+  border: 8px solid #ffffff !important;
+  border-radius: 50% / 20px 20px 25px 25px !important;
+  background-color: var(--wx-card-bg) !important;
+  box-shadow: 0 20px 50px rgba(102, 187, 106, 0.25) !important;
+  padding: 30px !important;
+  margin: 40px 0 !important;
+}
+
+.tpl-papercut-meadow .wx-media-frame {
+  border: 10px solid #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: 15px 15px 35px rgba(0,0,0,0.06) !important;
+  background-color: #fff;
+  transform: rotate(2deg);
+}
+
+.tpl-papercut-meadow .wx-section:nth-of-type(3n + 1) {
+  --wx-bg: #f1f8e9;
+  --wx-accent: #66bb6a;
+  --wx-card-bg: #fafdca;
+}
+.tpl-papercut-meadow .wx-section:nth-of-type(3n + 2) {
+  --wx-bg: #fffcf0;
+  --wx-accent: #ffb74d;
+  --wx-card-bg: #fff8e1;
+}
+.tpl-papercut-meadow .wx-section:nth-of-type(3n + 3) {
+  --wx-bg: #f7f9f3;
+  --wx-accent: #8d99ae;
+  --wx-card-bg: #edf2f4;
+}

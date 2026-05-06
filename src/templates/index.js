@@ -17,7 +17,14 @@ import { blankMinimal } from './blankMinimal.js'
 import { pingfangLight } from './pingfangLight.js'
 import { luxeGold } from './luxeGold.js'
 
+import { magazinePaperCutA } from './magazinePaperCutA.js'
+import { magazinePaperCutB } from './magazinePaperCutB.js'
+import { magazinePaperCutC } from './magazinePaperCutC.js'
+
 export const templates = [
+  magazinePaperCutA,
+  magazinePaperCutB,
+  magazinePaperCutC,
   magazineA,
   magazineB,
   magazineBalkan,
