@@ -82,6 +82,28 @@
   position: relative;
 }
 
+.tpl-papercut-sweet .wx-data-card,
+.tpl-papercut-sweet .wx-compare-col,
+.tpl-papercut-sweet .wx-summary-card,
+.tpl-papercut-sweet .wx-illustration-card {
+  border: 8px solid #ffffff !important;
+  border-radius: 32px !important;
+  background-color: var(--wx-card-bg) !important;
+  box-shadow: 0 18px 38px rgba(255, 182, 193, 0.22) !important;
+}
+
+.tpl-papercut-sweet .wx-illustration-card {
+  display: block;
+  text-align: center;
+}
+
+.tpl-papercut-sweet .wx-illustration-img {
+  width: 48%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 10px;
+}
+
 .tpl-papercut-sweet .wx-media-frame {
   border: 10px solid #ffffff !important;
   border-radius: 20px !important;

@@ -128,7 +128,7 @@ export function createPaperCutTemplate(config) {
           box-sizing: border-box;
         `.trim().replace(/\n\s*/g, ' ')
 
-        section.querySelectorAll('.wx-callout, .wx-note, .wx-highlight, .wx-scheme-card').forEach(el => {
+        section.querySelectorAll('.wx-callout, .wx-note, .wx-highlight, .wx-scheme-card, .wx-data-card, .wx-compare-col, .wx-summary-card, .wx-illustration-card').forEach(el => {
           el.setAttribute('style', stickerStyle)
           
           if (el.classList.contains('wx-callout')) {
@@ -139,6 +139,50 @@ export function createPaperCutTemplate(config) {
               item.setAttribute('style', itemStyle)
             })
           }
+        })
+
+        section.querySelectorAll('.wx-data-label, .wx-data-note, .wx-compare-label, .wx-compare-desc, .wx-timeline-desc, .wx-illustration-caption').forEach(el => {
+          el.setAttribute('style', 'display:block; font-family:' + SANS + '; font-size:12px; line-height:1.6; font-weight:700; color:#555;')
+        })
+
+        section.querySelectorAll('.wx-data-value').forEach(el => {
+          el.setAttribute('style', `display:block; margin:4px 0; font-family:${SERIF}; font-size:24px; line-height:1.35; font-weight:800; color:${pal.accent};`)
+        })
+
+        section.querySelectorAll('.wx-compare-card').forEach(card => {
+          card.setAttribute('style', 'margin:30px 0; padding:0; display:block; font-size:0; line-height:0;')
+        })
+
+        section.querySelectorAll('.wx-compare-col').forEach((col, colIndex) => {
+          col.setAttribute('style', `${stickerStyle}; display:inline-block; width:49%; margin:0 ${colIndex === 0 ? '2%' : '0'} 0 0; vertical-align:top;`)
+        })
+
+        section.querySelectorAll('.wx-compare-title, .wx-timeline-title, .wx-summary-title').forEach(el => {
+          el.setAttribute('style', `display:block; font-family:${SERIF}; font-size:15px; line-height:1.62; font-weight:800; color:${pal.accent};`)
+        })
+
+        section.querySelectorAll('.wx-timeline').forEach(item => {
+          item.setAttribute('style', 'margin:22px 0; display:block; padding:0;')
+          const dot = item.querySelector('.wx-timeline-dot')
+          if (dot) dot.setAttribute('style', `display:inline-block; width:10px; height:10px; margin:7px 12px 0 4px; border-radius:10px; background:${pal.accent}; vertical-align:top;`)
+          const body = item.querySelector('.wx-timeline-body')
+          if (body) body.setAttribute('style', 'display:inline-block; width:86%; vertical-align:top;')
+        })
+
+        section.querySelectorAll('.wx-summary-item').forEach(item => {
+          item.setAttribute('style', `display:block; margin-top:8px; font-family:${SERIF}; font-size:14px; line-height:1.78; color:#555;`)
+        })
+
+        section.querySelectorAll('.wx-summary-item b').forEach(num => {
+          num.setAttribute('style', `display:inline-block; width:20px; height:20px; margin-right:8px; border-radius:20px; text-align:center; line-height:20px; font-family:${SANS}; font-size:11px; color:#fff; background:${pal.accent};`)
+        })
+
+        section.querySelectorAll('.wx-illustration-card').forEach(card => {
+          card.setAttribute('style', `${stickerStyle}; text-align:center;`)
+        })
+
+        section.querySelectorAll('.wx-illustration-img').forEach(img => {
+          img.setAttribute('style', 'display:block; width:42%; max-width:150px; height:auto; margin:0 auto 8px; border-radius:16px;')
         })
 
         // 7. Images as "Polaroid Cutouts"

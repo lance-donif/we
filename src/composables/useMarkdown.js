@@ -54,6 +54,11 @@ export function useMarkdown(markdownRef, templateRef) {
         flushCards()
         continue
       }
+
+      if (/^(提示词|图片提示词|内部备注|生成提示)[:：]/.test(trimmed)) {
+        flushCards()
+        continue
+      }
       
       if (line.startsWith('# ')) {
         flushCards()
@@ -172,6 +177,78 @@ export function useMarkdown(markdownRef, templateRef) {
         continue
       }
 
+      if (line.startsWith('::stat ')) {
+        flushCards()
+        const [label = '', value = '', note = ''] = splitParts(line, 7)
+        html += `
+          <section class="wx-data-card">
+            <span class="wx-data-label">${inlineFormat(label)}</span>
+            <strong class="wx-data-value">${inlineFormat(value)}</strong>
+            <span class="wx-data-note">${inlineFormat(note)}</span>
+          </section>
+        `
+        continue
+      }
+
+      if (line.startsWith('::compare ')) {
+        flushCards()
+        const [badTitle = '', badDesc = '', goodTitle = '', goodDesc = ''] = splitParts(line, 10)
+        html += `
+          <section class="wx-compare-card">
+            <div class="wx-compare-col wx-compare-bad">
+              <span class="wx-compare-label">不建议</span>
+              <strong class="wx-compare-title">${inlineFormat(badTitle)}</strong>
+              <span class="wx-compare-desc">${inlineFormat(badDesc)}</span>
+            </div>
+            <div class="wx-compare-col wx-compare-good">
+              <span class="wx-compare-label">更稳妥</span>
+              <strong class="wx-compare-title">${inlineFormat(goodTitle)}</strong>
+              <span class="wx-compare-desc">${inlineFormat(goodDesc)}</span>
+            </div>
+          </section>
+        `
+        continue
+      }
+
+      if (line.startsWith('::timeline ')) {
+        flushCards()
+        const [label = '', desc = ''] = splitParts(line, 11)
+        html += `
+          <section class="wx-timeline">
+            <span class="wx-timeline-dot"></span>
+            <div class="wx-timeline-body">
+              <strong class="wx-timeline-title">${inlineFormat(label)}</strong>
+              <span class="wx-timeline-desc">${inlineFormat(desc)}</span>
+            </div>
+          </section>
+        `
+        continue
+      }
+
+      if (line.startsWith('::summary ')) {
+        flushCards()
+        const [title = '', ...items] = splitParts(line, 10)
+        html += '<section class="wx-summary-card">'
+        html += `<strong class="wx-summary-title">${inlineFormat(title || '最后记一下')}</strong>`
+        items.filter(Boolean).forEach((item, index) => {
+          html += `<span class="wx-summary-item"><b>${index + 1}</b>${inlineFormat(item)}</span>`
+        })
+        html += '</section>'
+        continue
+      }
+
+      if (line.startsWith('::image-right ')) {
+        flushCards()
+        const [alt = '', src = '', caption = ''] = splitParts(line, 14)
+        html += `
+          <section class="wx-illustration-card">
+            <img class="wx-illustration-img" src="${src}" alt="${alt}" />
+            <span class="wx-illustration-caption">${inlineFormat(caption || alt)}</span>
+          </section>
+        `
+        continue
+      }
+
       const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)/)
       if (imgMatch) {
         flushCards()
@@ -221,4 +298,8 @@ function inlineFormat(text) {
   text = text.replace(/`(.+?)`/g, '<code class="wx-code">$1</code>')
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="wx-link">$1</a>')
   return text
+}
+
+function splitParts(line, offset) {
+  return line.slice(offset).split('|').map(item => item.trim())
 }

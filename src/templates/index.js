@@ -6,25 +6,21 @@ import { magazineTips } from './magazineTips.js'
 import { magazineXinjiang } from './magazineXinjiang.js'
 import { magazineChangsha } from './magazineChangsha.js'
 import { magazineMarket } from './magazineMarket.js'
-import { pureMist } from './pureMist.js'
-import { pureOat } from './pureOat.js'
-import { pureSage } from './pureSage.js'
-import { pureBlue } from './pureBlue.js'
-import { canvaBiz } from './canvaBiz.js'
-import { canvaFresh } from './canvaFresh.js'
-import { canvaArtsy } from './canvaArtsy.js'
 import { blankMinimal } from './blankMinimal.js'
 import { pingfangLight } from './pingfangLight.js'
 import { luxeGold } from './luxeGold.js'
-
-import { magazinePaperCutA } from './magazinePaperCutA.js'
-import { magazinePaperCutB } from './magazinePaperCutB.js'
-import { magazinePaperCutC } from './magazinePaperCutC.js'
+import { cleanLine } from './cleanLine.js'
+import { cleanBrief } from './cleanBrief.js'
+import { cleanWarm } from './cleanWarm.js'
+import { notionBoard } from './notionBoard.js'
+import { duoLesson } from './duoLesson.js'
 
 export const templates = [
-  magazinePaperCutA,
-  magazinePaperCutB,
-  magazinePaperCutC,
+  cleanLine,
+  cleanBrief,
+  cleanWarm,
+  notionBoard,
+  duoLesson,
   magazineA,
   magazineB,
   magazineBalkan,
@@ -33,13 +29,6 @@ export const templates = [
   magazineXinjiang,
   magazineChangsha,
   magazineMarket,
-  pureMist,
-  pureOat,
-  pureSage,
-  pureBlue,
-  canvaBiz,
-  canvaFresh,
-  canvaArtsy,
   blankMinimal,
   pingfangLight,
   luxeGold,

@@ -353,14 +353,74 @@ export function createMagazineTemplate(template) {
           })
         })
 
-        section.querySelectorAll('.wx-feature + .wx-p, .wx-callout + .wx-p, .wx-note + .wx-p, .wx-highlight + .wx-p, .wx-scheme-card + .wx-p, .wx-media-grid + .wx-p').forEach((paragraph) => {
+        section.querySelectorAll('.wx-data-card').forEach((card) => {
+          card.setAttribute('style', `margin:${cs.componentSpacing} 0 0; padding:16px 14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder}; box-sizing:border-box;`)
+          card.querySelectorAll('.wx-data-label, .wx-data-note').forEach(el => {
+            el.setAttribute('style', `display:block; font-family:${sansStack}; font-size:12px; line-height:1.55; font-weight:700; color:${palette.h3}; letter-spacing:0.04em;`)
+          })
+          card.querySelectorAll('.wx-data-value').forEach(el => {
+            el.setAttribute('style', `display:block; margin:4px 0; font-family:${serifStack}; font-size:24px; line-height:1.35; font-weight:700; color:${palette.accent};`)
+          })
+        })
+
+        section.querySelectorAll('.wx-compare-card').forEach((card) => {
+          card.setAttribute('style', `margin:${cs.componentSpacing} 0 0; padding:0; display:block; font-size:0; line-height:0;`)
+          card.querySelectorAll('.wx-compare-col').forEach((col, colIndex) => {
+            col.setAttribute('style', `display:inline-block; width:49%; margin:0 ${colIndex === 0 ? '2%' : '0'} 0 0; padding:12px; vertical-align:top; border-radius:14px; background-color:${cardSurface}; border:1px solid ${subtleBorder}; box-sizing:border-box;`)
+          })
+          card.querySelectorAll('.wx-compare-label, .wx-compare-desc').forEach(el => {
+            el.setAttribute('style', `display:block; font-family:${serifStack}; font-size:12px; line-height:1.68; font-weight:500; color:${palette.h3};`)
+          })
+          card.querySelectorAll('.wx-compare-title').forEach(el => {
+            el.setAttribute('style', `display:block; margin:4px 0 0; font-family:${serifStack}; font-size:15px; line-height:1.62; font-weight:700; color:${palette.accent};`)
+          })
+        })
+
+        section.querySelectorAll('.wx-timeline').forEach((item) => {
+          item.setAttribute('style', `margin:${cs.componentSpacing} 0 0; display:block; padding:0;`)
+          const dot = item.querySelector('.wx-timeline-dot')
+          if (dot) dot.setAttribute('style', `display:inline-block; width:10px; height:10px; margin:7px 12px 0 4px; border-radius:10px; background-color:${palette.accent}; vertical-align:top;`)
+          const body = item.querySelector('.wx-timeline-body')
+          if (body) body.setAttribute('style', 'display:inline-block; width:86%; vertical-align:top;')
+          item.querySelectorAll('.wx-timeline-title').forEach(el => {
+            el.setAttribute('style', `display:block; font-family:${serifStack}; font-size:15px; line-height:1.62; font-weight:700; color:${palette.accent};`)
+          })
+          item.querySelectorAll('.wx-timeline-desc').forEach(el => {
+            el.setAttribute('style', `display:block; margin-top:2px; font-family:${serifStack}; font-size:13px; line-height:1.7; color:${palette.h3};`)
+          })
+        })
+
+        section.querySelectorAll('.wx-summary-card').forEach((card) => {
+          card.setAttribute('style', `margin:${cs.componentSpacing} 0 0; padding:16px 14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder}; box-sizing:border-box;`)
+          card.querySelectorAll('.wx-summary-title').forEach(el => {
+            el.setAttribute('style', `display:block; font-family:${serifStack}; font-size:15px; line-height:1.62; font-weight:700; color:${palette.accent};`)
+          })
+          card.querySelectorAll('.wx-summary-item').forEach(el => {
+            el.setAttribute('style', `display:block; margin-top:8px; font-family:${serifStack}; font-size:14px; line-height:1.78; color:#4d473f;`)
+          })
+          card.querySelectorAll('.wx-summary-item b').forEach(el => {
+            el.setAttribute('style', `display:inline-block; width:20px; height:20px; margin-right:8px; border-radius:20px; text-align:center; line-height:20px; font-family:${sansStack}; font-size:11px; color:#fff; background-color:${palette.accent};`)
+          })
+        })
+
+        section.querySelectorAll('.wx-illustration-card').forEach((card) => {
+          card.setAttribute('style', `margin:${cs.componentSpacing} 0 0; padding:14px; border-radius:18px; background-color:${cardSurface}; border:1px solid ${subtleBorder}; box-sizing:border-box; text-align:center;`)
+          card.querySelectorAll('.wx-illustration-img').forEach(el => {
+            el.setAttribute('style', 'display:block; width:42%; max-width:150px; height:auto; margin:0 auto 8px; border-radius:16px;')
+          })
+          card.querySelectorAll('.wx-illustration-caption').forEach(el => {
+            el.setAttribute('style', `display:block; font-family:${sansStack}; font-size:12px; line-height:1.55; font-weight:700; color:${palette.h3};`)
+          })
+        })
+
+        section.querySelectorAll('.wx-feature + .wx-p, .wx-callout + .wx-p, .wx-note + .wx-p, .wx-highlight + .wx-p, .wx-scheme-card + .wx-p, .wx-media-grid + .wx-p, .wx-data-card + .wx-p, .wx-compare-card + .wx-p, .wx-timeline + .wx-p, .wx-summary-card + .wx-p, .wx-illustration-card + .wx-p').forEach((paragraph) => {
           paragraph.setAttribute(
             'style',
             `margin:${cs.componentSpacing} 0 0; padding:0; display:block; font-family:${serifStack}; font-size:${cs.pSize}; line-height:1.82; font-weight:400; letter-spacing:0.01em; color:#343a40; text-align:left;`
           )
         })
 
-        section.querySelectorAll('.wx-feature + .wx-h3, .wx-callout + .wx-h3, .wx-note + .wx-h3, .wx-highlight + .wx-h3, .wx-scheme-card + .wx-h3, .wx-media-grid + .wx-h3').forEach((h3) => {
+        section.querySelectorAll('.wx-feature + .wx-h3, .wx-callout + .wx-h3, .wx-note + .wx-h3, .wx-highlight + .wx-h3, .wx-scheme-card + .wx-h3, .wx-media-grid + .wx-h3, .wx-data-card + .wx-h3, .wx-compare-card + .wx-h3, .wx-timeline + .wx-h3, .wx-summary-card + .wx-h3, .wx-illustration-card + .wx-h3').forEach((h3) => {
           h3.setAttribute(
             'style',
             h3.classList.contains('wx-h3-mood')

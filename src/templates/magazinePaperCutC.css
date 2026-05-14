@@ -80,6 +80,28 @@
   margin: 40px 0 !important;
 }
 
+.tpl-papercut-meadow .wx-data-card,
+.tpl-papercut-meadow .wx-compare-col,
+.tpl-papercut-meadow .wx-summary-card,
+.tpl-papercut-meadow .wx-illustration-card {
+  border: 8px solid #ffffff !important;
+  border-radius: 34px !important;
+  background-color: var(--wx-card-bg) !important;
+  box-shadow: 0 18px 38px rgba(102, 187, 106, 0.18) !important;
+}
+
+.tpl-papercut-meadow .wx-illustration-card {
+  display: block;
+  text-align: center;
+}
+
+.tpl-papercut-meadow .wx-illustration-img {
+  width: 48%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 10px;
+}
+
 .tpl-papercut-meadow .wx-media-frame {
   border: 10px solid #ffffff !important;
   border-radius: 12px !important;
